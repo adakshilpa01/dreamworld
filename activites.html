@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Slider</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<style>
+
+
+body{font-family:playfair display;background:#0b1a3a;color:#fff}
+
+/* Navbar */
+.navbar{background:#07132b;padding:15px 0}
+.navbar-brand{font-weight:bold;font-size:24px;color:#ffd60a !important}
+.nav-link{color:#fff !important;margin:0 10px}
+.nav-link:hover{color:#ff2e88 !important}
+.btn-nav{background:#ff2e88;color:#fff;border:none;padding:8px 18px;border-radius:6px}
+
+/* Hero */
+.hero{height:90vh;background:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center}
+.hero h1{font-size:60px;font-weight:bold}
+.hero span{color:#ff2e88}
+.btn-main{background:#ffd60a;color:#000;border:none;padding:12px 25px;border-radius:8px}
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  background:#000;
+}
+
+/* HERO */
+.hero{
+  position:relative;
+  height:80vh;
+  overflow:hidden;
+}
+
+/* SLIDES */
+.slide{
+  position:absolute;
+  width:100%;
+  height:80vh;
+  background-size:cover;
+  background-position:center;
+  opacity:0;
+  transform:scale(1.1);
+  transition:1.5s ease;
+}
+
+.slide.active{
+  opacity:1;
+  transform:scale(1);
+}
+
+/* OVERLAY */
+.overlay{
+  position:absolute;
+  width:100%;
+  height:80vh;
+  background:linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
+}
+
+/* CONTENT */
+.hero-content{
+  position:absolute;
+  top:50%;
+  left:8%;
+  transform:translateY(-50%);
+  color:white;
+  animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+.hero-content p{
+  font-size:18px;
+  margin-bottom:10px;
+}
+
+.hero-content h1{
+  font-size:65px;
+  font-weight:700;
+  line-height:1.2;
+}
+
+/* BUTTONS */
+.btn{
+  display:inline-block;
+  padding:14px 30px;
+  margin-top:20px;
+  margin-right:10px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.btn-yellow{
+  background:#FFD700;
+  color:black;
+}
+
+.btn-yellow:hover{
+  background:white;
+}
+
+.btn-outline{
+  border:2px solid #FFD700;
+  color:#FFD700;
+}
+
+.btn-outline:hover{
+  background:#FFD700;
+  color:black;
+}
+
+/* ARROWS */
+.arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:25px;
+  color:white;
+  background:rgba(0,0,0,0.5);
+  padding:10px;
+  cursor:pointer;
+  border-radius:50%;
+}
+
+.arrow.left{ left:20px; }
+.arrow.right{ right:20px; }
+
+/* DOTS */
+.dots{
+  position:absolute;
+  bottom:100px;
+  width:100%;
+  text-align:center;
+}
+
+.dot{
+  display:inline-block;
+  width:10px;
+  height:10px;
+  margin:5px;
+  background:#aaa;
+  border-radius:50%;
+  cursor:pointer;
+}
+
+.dot.active{
+  background:#FFD700;
+}
+
+/* SEARCH BAR GLASS */
+.search-box{
+  position:absolute;
+  bottom:30px;
+  left:50%;
+  transform:translateX(-50%);
+  backdrop-filter: blur(10px);
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.2);
+  width:80%;
+  padding:20px;
+  border-radius:50px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.search-box label{
+  font-size:12px;
+  color:#ddd;
+}
+
+.search-box select{
+  background:transparent;
+  color:white;
+  border:none;
+  outline:none;
+}
+
+/* BUTTON */
+.search-btn{
+  background:#FFD700;
+  padding:12px 25px;
+  border:none;
+  border-radius:30px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero-content h1{
+    font-size:35px;
+  }
+
+  .search-box{
+    flex-direction:column;
+    border-radius:20px;
+  }
+body {
+  margin: 0;
+  background: #000;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* SECTION */
+.tour-section {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.tour-section h2 {
+  color: #ffc107;
+  font-size: 45px;
+  margin-bottom: 70px;
+}
+
+/* SWIPER */
+.swiper {
+  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+/* CARD */
+.swiper-slide {
+  width: 260px;
+  height: 350px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  backdrop-filter: blur(10px);
+  transition: 0.4s;
+}
+
+/* IMAGE */
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* OVERLAY */
+.swiper-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+/* CONTENT */
+.slide-content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 2;
+}
+
+.slide-content h3 {
+  color: #fff;
+  margin: 0;
+  font-size: 20px;
+}
+
+.slide-content p {
+  color: #ccc;
+  font-size: 14px;
+}
+
+/* ACTIVE EFFECT */
+.swiper-slide-active {
+  transform: scale(1.2);
+  box-shadow: 0 0 40px rgba(255,193,7,0.6);
+}
+
+/* BLUR SIDE */
+.swiper-slide-prev,
+.swiper-slide-next {
+  filter: blur(2px);
+  opacity: 0.7;
+}
+
+/* NAV BUTTONS */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ffc107;
+}
+
+/* PAGINATION */
+.swiper-pagination-bullet {
+  background: #999;
+}
+.swiper-pagination-bullet-active {
+  background: #ffc107;
+}
+body{background:#0b1a3a;color:#fff;font-family:Arial}
+.section{padding:80px 0}
+
+/* About */
+.about-text h2{color:#ffd60a}
+.about-text p{opacity:0.9}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .swiper-slide {
+    width: 200px;
+    height: 280px;
+  }
+}
+
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg">
+<div class="container">
+<a class="navbar-brand" href="#">Travel</a>
+<button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="nav">
+<ul class="navbar-nav ms-auto align-items-center">
+<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+<li class="nav-item"><a class="nav-link" href="activites.html">Activites</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Membership</a></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Hotels</a>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="domestic.html">Domestic</a></li>
+<li><a class="dropdown-item" href="international.html">International</a></li>
+</ul>
+</li>
+<li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+<li class="nav-item me-2"><button class="btn btn-outline-light">Login</button></li>
+<li class="nav-item"><button class="btn-nav">Book Now</button></li>
+</ul>
+</div>
+</div>
+</nav>
+
+
+  <!-- SLIDES -->
+  <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e')"></div>
+  <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1')"></div>
+  <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee')"></div>
+
+  <div class="overlay"></div>
+
+  <!-- CONTENT -->
+  <div class="hero-content">
+    <p>Get unforgettable pleasure with us</p>
+    <h1>Natural Wonder<br>of the world</h1>
+
+    <a href="#" class="btn btn-yellow">Explore Tours</a>
+    <a href="#" class="btn btn-outline">Our Services</a>
+  </div>
+
+  <!-- ARROWS -->
+  <div class="arrow left">&#10094;</div>
+  <div class="arrow right">&#10095;</div>
+
+  <!-- DOTS -->
+  <div class="dots"></div>
+
+  <!-- SEARCH -->
+  <div class="search-box">
+    <div>
+      <label>Destination</label>
+      <select><option>Goa</option></select>
+    </div>
+    <div>
+      <label>Type</label>
+      <select><option>Adventure</option></select>
+    </div>
+    <div>
+      <label>Duration</label>
+      <select><option>5 Days</option></select>
+    </div>
+    <div>
+      <label>Category</label>
+      <select><option>Luxury</option></select>
+    </div>
+
+    <button class="search-btn">Search</button>
+  </div>
+
+<section class="tour-section">
+  <h2>Wonderful Places For You</h2>
+
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+        <div class="slide-content">
+          <h3>Beach</h3>
+          <p>Relax & Enjoy</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+        <div class="slide-content">
+          <h3>Mountains</h3>
+          <p>Adventure Awaits</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d">
+        <div class="slide-content">
+          <h3>City</h3>
+          <p>Explore Life</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+        <div class="slide-content">
+          <h3>Desert</h3>
+          <p>Feel the Silence</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429">
+        <div class="slide-content">
+          <h3>Forest</h3>
+          <p>Nature Love</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- NAV -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
+    <!-- PAGINATION -->
+    <div class="swiper-pagination"></div>
+
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+
+let slides = document.querySelectorAll('.slide');
+let dotsContainer = document.querySelector('.dots');
+let index = 0;
+
+/* CREATE DOTS */
+slides.forEach((_, i)=>{
+  let dot = document.createElement('span');
+  dot.classList.add('dot');
+  if(i===0) dot.classList.add('active');
+  dot.addEventListener('click', ()=>showSlide(i));
+  dotsContainer.appendChild(dot);
+});
+
+let dots = document.querySelectorAll('.dot');
+
+function showSlide(i){
+  slides[index].classList.remove('active');
+  dots[index].classList.remove('active');
+  index = i;
+  slides[index].classList.add('active');
+  dots[index].classList.add('active');
+}
+
+/* AUTO SLIDE */
+setInterval(()=>showSlide((index+1)%slides.length),4000);
+
+/* ARROWS */
+document.querySelector('.left').onclick=()=>{
+  showSlide((index-1+slides.length)%slides.length);
+}
+
+document.querySelector('.right').onclick=()=>{
+  showSlide((index+1)%slides.length);
+}
+</script>
+
+<script>
+var swiper = new Swiper(".mySwiper", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  loop: true,
+
+  coverflowEffect: {
+    rotate: 30,
+    stretch: 0,
+    depth: 150,
+    modifier: 2,
+    slideShadows: false,
+  },
+
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction: false,
+  },
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+
+  mousewheel: true,
+  keyboard: true,
+});
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

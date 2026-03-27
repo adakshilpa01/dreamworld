@@ -5,12 +5,73 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>India Hotels</title>
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
 <style>
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #000;
+body{font-family:playfair display;background:#0b1a3a;color:#fff}
+
+/* Navbar */
+.navbar{background:#07132b;padding:15px 0}
+.navbar-brand{font-weight:bold;font-size:24px;color:#ffd60a !important}
+.nav-link{color:#fff !important;margin:0 10px}
+.nav-link:hover{color:#ff2e88 !important}
+.btn-nav{background:#ff2e88;color:#fff;border:none;padding:8px 18px;border-radius:6px}
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
+/* Dropdown box */
+.dropdown-menu {
+  background: #0b1d3a;   /* dark blue */
+  border-radius: 10px;
+  padding: 10px 0;
+  border: none;
+  margin-top: 10px;
+  min-width: 200px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* Items */
+.dropdown-menu .dropdown-item {
+  color: #fff;
+  padding: 10px 20px;
+  transition: 0.3s;
+}
+
+/* Hover effect */
+.dropdown-menu .dropdown-item:hover {
+  background: transparent;
+  color: #ffd700;   /* yellow */
+  transform: translateX(5px);
+}
+
+/* Hover open */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Navbar link */
+.nav-link {
+  position: relative;
+  color: white;
+}
+
+/* Yellow underline on hover */
+.nav-link:hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #ffd700;  /* yellow */
+  left: 0;
+  bottom: -5px;
+}
+
+/* Hero */
+.hero{height:90vh;background:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center}
+.hero h1{font-size:60px;font-weight:bold}
+.hero span{color:#ff2e88}
+.btn-main{background:#ffd60a;color:#000;border:none;padding:12px 25px;border-radius:8px}
 
 /* BANNER */
 .india-banner {
@@ -132,10 +193,70 @@ body {
     width: 100%;
   }
 }
+
+/* Footer */
+footer{background:#07132b;padding:50px 0}
+.footer-links a{display:block;color:#fff;text-decoration:none;margin-bottom:8px}
+.footer-links a:hover{color:#ffd60a}
+.social i{font-size:20px;margin-right:10px;color:#ff2e88}
+.copy{border-top:1px solid #222;margin-top:20px;padding-top:15px;text-align:center}
+
+.cursor-dot, .cursor-circle{
+position: fixed;
+pointer-events: none;
+z-index: 9999;
+transform: translate(-50%, -50%);
+}
+
+.cursor-dot{
+width: 8px;
+height: 8px;
+background: #ffd60a;
+border-radius: 50%;
+}
+
+.cursor-circle{
+width: 35px;
+height: 35px;
+border: 2px solid #ff2e88;
+border-radius: 50%;
+transition: 0.15s ease-out;
+}
+
 </style>
 
 </head>
 <body>
+
+    <!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg">
+<div class="container">
+<a class="navbar-brand" href="#">Travel</a>
+<button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="nav">
+<ul class="navbar-nav ms-auto align-items-center">
+<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+<li class="nav-item"><a class="nav-link" href="activites.html">Activites</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Membership</a></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Hotels</a>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="domestic.html">Domestic</a></li>
+<li><a class="dropdown-item" href="international.html">International</a></li>
+</ul>
+</li>
+<li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+<li class="nav-item me-2"><button class="btn btn-outline-light">Login</button></li>
+<li class="nav-item"><button class="btn-nav">Book Now</button></li>
+</ul>
+</div>
+</div>
+</nav>
+
 
 <!-- BANNER -->
 <section class="india-banner">
@@ -217,6 +338,56 @@ body {
 
 </section>
 
+<!-- FOOTER -->
+<footer>
+<div class="container">
+<div class="row">
+
+<div class="col-md-4">
+<h5>Travel</h5>
+<p>Best travel agency for tours, flights and hotels worldwide.</p>
+<div class="social">
+<i class="fab fa-facebook"></i>
+<i class="fab fa-instagram"></i>
+<i class="fab fa-twitter"></i>
+</div>
+</div>
+
+<div class="col-md-2 footer-links">
+<h6>Quick Links</h6>
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Services</a>
+<a href="#">Contact</a>
+</div>
+
+<div class="col-md-3 footer-links">
+<h6>Services</h6>
+<a href="#">Flights</a>
+<a href="#">Hotels</a>
+<a href="#">Tours</a>
+<a href="#">Transport</a>
+</div>
+
+<div class="col-md-3">
+<h6>Contact</h6>
+<p>Email: info@travel.com</p>
+<p>Phone: +91 9876543210</p>
+<p>Location: India</p>
+</div>
+
+</div>
+
+<div class="copy">
+<p>© 2026 Travel Agency | All Rights Reserved</p>
+</div>
+
+</div>
+</footer>
+<div class="cursor-dot"></div>
+<div class="cursor-circle"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</section>
 <script>
 function filterHotels(city) {
   const hotels = document.querySelectorAll(".hotel-item");
@@ -233,6 +404,17 @@ function filterHotels(city) {
     }
   });
 }
+</script>
+
+</script>
+<div class="cursor-dot" id="cursorDot"></div>
+
+<script>
+const dot = document.getElementById('cursorDot');
+document.addEventListener('mousemove', (e) => {
+  dot.style.left = e.clientX + 'px';
+  dot.style.top = e.clientY + 'px';
+});
 </script>
 
 </body>

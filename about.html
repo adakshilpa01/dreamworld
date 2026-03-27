@@ -19,12 +19,62 @@ body{font-family:playfair display;background:#0b1a3a;color:#fff}
 .nav-link{color:#fff !important;margin:0 10px}
 .nav-link:hover{color:#ff2e88 !important}
 .btn-nav{background:#ff2e88;color:#fff;border:none;padding:8px 18px;border-radius:6px}
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+/* Dropdown box */
+.dropdown-menu {
+  background: #0b1d3a;   /* dark blue */
+  border-radius: 10px;
+  padding: 10px 0;
+  border: none;
+  margin-top: 10px;
+  min-width: 200px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* Items */
+.dropdown-menu .dropdown-item {
+  color: #fff;
+  padding: 10px 20px;
+  transition: 0.3s;
+}
+
+/* Hover effect */
+.dropdown-menu .dropdown-item:hover {
+  background: transparent;
+  color: #ffd700;   /* yellow */
+  transform: translateX(5px);
+}
+
+/* Hover open */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Navbar link */
+.nav-link {
+  position: relative;
+  color: white;
+}
+
+/* Yellow underline on hover */
+.nav-link:hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #ffd700;  /* yellow */
+  left: 0;
+  bottom: -5px;
+}
 
 /* Hero */
 .hero{height:90vh;background:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center}
 .hero h1{font-size:60px;font-weight:bold}
 .hero span{color:#ff2e88}
 .btn-main{background:#ffd60a;color:#000;border:none;padding:12px 25px;border-radius:8px}
+
 
 .section{padding:80px 0}
 
@@ -218,13 +268,19 @@ transition: 0.15s ease-out;
 </button>
 <div class="collapse navbar-collapse" id="nav">
 <ul class="navbar-nav ms-auto align-items-center">
-<li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-<li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
 <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-<li class="nav-item"><a class="nav-link" href="#">Activites</a></li>
+<li class="nav-item"><a class="nav-link" href="activites.html">Activites</a></li>
 <li class="nav-item"><a class="nav-link" href="#">Membership</a></li>
-<li class="nav-item"><a class="nav-link" href="#">Hotels</a></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Hotels</a>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="domestic.html">Domestic</a></li>
+<li><a class="dropdown-item" href="international.html">International</a></li>
+</ul>
+</li>
 <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
 <li class="nav-item me-2"><button class="btn btn-outline-light">Login</button></li>
 <li class="nav-item"><button class="btn-nav">Book Now</button></li>
 </ul>
