@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>India Hotels</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #000;
+}
+
+/* BANNER */
+.india-banner {
+  height: 300px;
+  background: url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da') center/cover;
+}
+
+.banner-overlay {
+  background: rgba(0,0,0,0.6);
+  height: 100%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 50px;
+}
+
+.banner-overlay h1 {
+  color: #f5c518;
+  font-size: 40px;
+  margin: 0;
+}
+
+/* MAIN */
+.india-page {
+  display: flex;
+  padding: 40px;
+  gap: 30px;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 250px;
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.sidebar h3 {
+  color: #f5c518;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+/* HOTEL LIST */
+.hotel-list {
+  flex: 1;
+}
+
+.hotel-item {
+  display: flex;
+  background: #111;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.hotel-item:hover {
+  transform: scale(1.02);
+}
+
+.hotel-item img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.details {
+  padding: 20px;
+  color: #fff;
+}
+
+.details h2 {
+  margin: 0;
+}
+
+.details p {
+  color: #aaa;
+}
+
+.details button {
+  background: #f5c518;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.details button:hover {
+  background: #fff;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+  .india-page {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .hotel-item {
+    flex-direction: column;
+  }
+
+  .hotel-item img {
+    width: 100%;
+  }
+}
+</style>
+
+</head>
+<body>
+
+<!-- BANNER -->
+<section class="india-banner">
+  <div class="banner-overlay">
+    <h1>International</h1>
+    <p>Home / Destinations / International</p>
+  </div>
+</section>
+
+<!-- MAIN PAGE -->
+<section class="india-page">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <h3>Destinations</h3>
+    <ul>
+      <li onclick="filterHotels('all')">All</li>
+      <li onclick="filterHotels('Bali')">Bali</li>
+      <li onclick="filterHotels('bangkok')">Bangkok</li>
+      <li onclick="filterHotels('Bhutan')">Bhutan</li>
+      <li onclick="filterHotels('canary island')">Canary Island</li>
+      <li onclick="filterHotels('bihar')">Dubai</li>
+      <li onclick="filterHotels('chhattisgarh')">Georgia</li>
+      <li onclick="filterHotels('goa')">Indonesia</li>
+      <li onclick="filterHotels('gujarat')">Istanbul</li>
+      <li onclick="filterHotels('delhi')">Las vegas</li>
+      <li onclick="filterHotels('haryana')">London</li>
+      <li onclick="filterHotels('himachal pradesh')">Malaysia</li>
+      <li onclick="filterHotels('jharkhand')">Maldives</li>
+      <li onclick="filterHotels('karnataka')">Mauritius</li>
+      <li onclick="filterHotels('kerala')">Nepal</li>
+      <li onclick="filterHotels('madhya pradesh')">Paris</li>
+      <li onclick="filterHotels('maharastra')">Pattaya</li>
+      <li onclick="filterHotels('manipur')">Phuket</li>
+      <li onclick="filterHotels('meghalaya')">Rome</li>
+      <li onclick="filterHotels('mizoram')">Singapore</li>
+      <li onclick="filterHotels('nagaland')">Spain</li>
+      <li onclick="filterHotels('odisha')">Sri lanka</li>
+      <li onclick="filterHotels('punjab')">Switzerland</li>
+      <li onclick="filterHotels('rajasthan')">United states of America</li>
+      <li onclick="filterHotels('sikkim')">Vietnam</li>
+    </ul>
+  </div>
+
+  <!-- HOTEL LIST -->
+  <div class="hotel-list">
+
+    <div class="hotel-item" data-city="jaipur">
+      <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945">
+      <div class="details">
+        <h2>Taj Lake Palace</h2>
+        <p>Udaipur / Jaipur</p>
+        <p>Luxury royal experience hotel</p>
+        <button>View Details</button>
+      </div>
+    </div>
+
+    <div class="hotel-item" data-city="delhi">
+      <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b">
+      <div class="details">
+        <h2>The Oberoi</h2>
+        <p>New Delhi</p>
+        <p>Premium city hotel</p>
+        <button>View Details</button>
+      </div>
+    </div>
+
+    <div class="hotel-item" data-city="goa">
+      <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb">
+      <div class="details">
+        <h2>Goa Beach Resort</h2>
+        <p>Goa</p>
+        <p>Beachside luxury stay</p>
+        <button>View Details</button>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+function filterHotels(city) {
+  const hotels = document.querySelectorAll(".hotel-item");
+
+  hotels.forEach(hotel => {
+    if (city === "all") {
+      hotel.style.display = "flex";
+    } else {
+      if (hotel.getAttribute("data-city") === city) {
+        hotel.style.display = "flex";
+      } else {
+        hotel.style.display = "none";
+      }
+    }
+  });
+}
+</script>
+
+</body>
+</html>

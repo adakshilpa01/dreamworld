@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>India Hotels</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #000;
+}
+
+/* BANNER */
+.india-banner {
+  height: 300px;
+  background: url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da') center/cover;
+}
+
+.banner-overlay {
+  background: rgba(0,0,0,0.6);
+  height: 100%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 50px;
+}
+
+.banner-overlay h1 {
+  color: #f5c518;
+  font-size: 40px;
+  margin: 0;
+}
+
+/* MAIN */
+.india-page {
+  display: flex;
+  padding: 40px;
+  gap: 30px;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 250px;
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.sidebar h3 {
+  color: #f5c518;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+/* HOTEL LIST */
+.hotel-list {
+  flex: 1;
+}
+
+.hotel-item {
+  display: flex;
+  background: #111;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.hotel-item:hover {
+  transform: scale(1.02);
+}
+
+.hotel-item img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.details {
+  padding: 20px;
+  color: #fff;
+}
+
+.details h2 {
+  margin: 0;
+}
+
+.details p {
+  color: #aaa;
+}
+
+.details button {
+  background: #f5c518;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.details button:hover {
+  background: #fff;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+  .india-page {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .hotel-item {
+    flex-direction: column;
+  }
+
+  .hotel-item img {
+    width: 100%;
+  }
+}
+</style>
+
+</head>
+<body>
+
+<!-- BANNER -->
+<section class="india-banner">
+  <div class="banner-overlay">
+    <h1>India</h1>
+    <p>Home / Destinations / India</p>
+  </div>
+</section>
+
+<!-- MAIN PAGE -->
+<section class="india-page">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <h3>Destinations</h3>
+    <ul>
+      <li onclick="filterHotels('all')">All</li>
+      <li onclick="filterHotels('ladakh')">Ladakh</li>
+      <li onclick="filterHotels('andra pradesh')">Andhra Pradesh</li>
+      <li onclick="filterHotels('arunachal pradesh')">Arunachal Pradesh</li>
+      <li onclick="filterHotels('assam')">Assam</li>
+      <li onclick="filterHotels('bihar')">Bihar</li>
+      <li onclick="filterHotels('chhattisgarh')">Chhattisgarh</li>
+      <li onclick="filterHotels('goa')">Goa</li>
+      <li onclick="filterHotels('gujarat')">Gujarat</li>
+      <li onclick="filterHotels('delhi')">Delhi</li>
+      <li onclick="filterHotels('haryana')">Haryana</li>
+      <li onclick="filterHotels('himachal pradesh')">Himachal Pradesh</li>
+      <li onclick="filterHotels('jharkhand')">Jharkhand</li>
+      <li onclick="filterHotels('karnataka')">Karnataka</li>
+      <li onclick="filterHotels('kerala')">Kerala</li>
+      <li onclick="filterHotels('madhya pradesh')">Madhya Pradesh</li>
+      <li onclick="filterHotels('maharastra')">Maharashtra</li>
+      <li onclick="filterHotels('manipur')">Manipur</li>
+      <li onclick="filterHotels('meghalaya')">Meghalaya</li>
+      <li onclick="filterHotels('mizoram')">Mizoram</li>
+      <li onclick="filterHotels('nagaland')">Nagaland</li>
+      <li onclick="filterHotels('odisha')">Odisha</li>
+      <li onclick="filterHotels('punjab')">Punjab</li>
+      <li onclick="filterHotels('rajasthan')">Rajasthan</li>
+      <li onclick="filterHotels('sikkim')">Sikkim</li>
+      <li onclick="filterHotels('tamil nadu')">Tamil Nadu</li>
+      <li onclick="filterHotels('telangana')">Telangana</li>
+      <li onclick="filterHotels('tripura')">Tripura</li>
+      <li onclick="filterHotels('uttar pradesh')">Uttar Pradesh</li>
+      <li onclick="filterHotels('uttarakhand')">Uttarakhand</li>
+      <li onclick="filterHotels('west bengal')">West Bengal</li>
+    </ul>
+  </div>
+
+  <!-- HOTEL LIST -->
+  <div class="hotel-list">
+
+    <div class="hotel-item" data-city="jaipur">
+      <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945">
+      <div class="details">
+        <h2>Taj Lake Palace</h2>
+        <p>Udaipur / Jaipur</p>
+        <p>Luxury royal experience hotel</p>
+        <button>View Details</button>
+      </div>
+    </div>
+
+    <div class="hotel-item" data-city="delhi">
+      <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b">
+      <div class="details">
+        <h2>The Oberoi</h2>
+        <p>New Delhi</p>
+        <p>Premium city hotel</p>
+        <button>View Details</button>
+      </div>
+    </div>
+
+    <div class="hotel-item" data-city="goa">
+      <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb">
+      <div class="details">
+        <h2>Goa Beach Resort</h2>
+        <p>Goa</p>
+        <p>Beachside luxury stay</p>
+        <button>View Details</button>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+function filterHotels(city) {
+  const hotels = document.querySelectorAll(".hotel-item");
+
+  hotels.forEach(hotel => {
+    if (city === "all") {
+      hotel.style.display = "flex";
+    } else {
+      if (hotel.getAttribute("data-city") === city) {
+        hotel.style.display = "flex";
+      } else {
+        hotel.style.display = "none";
+      }
+    }
+  });
+}
+</script>
+
+</body>
+</html>

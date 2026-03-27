@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+body{font-family:playfair display;background:#0b1a3a;color:#fff}
+
+/* Navbar */
+.navbar{background:#07132b;padding:15px 0}
+.navbar-brand{font-weight:bold;font-size:24px;color:#ffd60a !important}
+.nav-link{color:#fff !important;margin:0 10px}
+.nav-link:hover{color:#ff2e88 !important}
+.btn-nav{background:#ff2e88;color:#fff;border:none;padding:8px 18px;border-radius:6px}
+
+/* Hero */
+.hero{height:90vh;background:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center}
+.hero h1{font-size:60px;font-weight:bold}
+.hero span{color:#ff2e88}
+.btn-main{background:#ffd60a;color:#000;border:none;padding:12px 25px;border-radius:8px}
+
+.section{padding:80px 0}
+
+/* SECTION */
+.about-section {
+  padding: 100px 5%;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  height: 80vh;
+}
+
+/* CONTAINER */
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* IMAGE SIDE */
+.about-images {
+  position: relative;
+  width: 50%;
+  height: 450px;
+}
+
+/* COMMON IMAGE STYLE */
+.about-images img {
+  position: absolute;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: 0.4s;
+}
+
+.about-images img:hover {
+  transform: scale(1.05);
+}
+
+/* POSITIONING (OVERLAP MAGIC) */
+.img1 {
+  width: 260px;
+  height: 320px;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.img2 {
+  width: 240px;
+  height: 260px;
+  top: 100px;
+  left: 220px;
+  z-index: 2;
+}
+
+.img3 {
+  width: 300px;
+  height: 200px;
+  bottom: 0;
+  left: 80px;
+  z-index: 0;
+}
+
+/* CONTENT */
+.about-content {
+  width: 45%;
+}
+
+.about-content h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.about-content p {
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+.about-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-content li {
+  margin-bottom: 10px;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: linear-gradient(45deg, #00e0ff, #007bff);
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* MOBILE FIX */
+@media(max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+  }
+
+  .about-images,
+  .about-content {
+    width: 100%;
+  }
+
+  .about-images {
+    height: 350px;
+    margin-bottom: 30px;
+  }
+
+  .img1 { width: 180px; height: 220px; }
+  .img2 { width: 160px; height: 180px; left: 120px; top: 80px; }
+  .img3 { width: 200px; height: 140px; }
+}
+
+/* About */
+.about-text h1{color:#ffd60a}
+.about-text p{opacity:0.9}
+
+/* Vision Mission */
+.box{background:#101f4d;padding:30px;border-radius:15px;transition:0.4s}
+.box:hover{transform:translateY(-12px);box-shadow:0 20px 50px rgba(0,0,0,0.6)}
+.box i{font-size:40px;color:#ff2e88;margin-bottom:15px}
+
+/* Counters */
+.counter{text-align:center}
+.counter h1{color:#ffd60a;font-size:40px}
+
+/* Testimonials */
+.carousel-item{padding:20px}
+.testimonial{background:#101f4d;padding:30px;border-radius:15px;text-align:center;transition:0.3s}
+.testimonial:hover{transform:scale(1.05)}
+.testimonial img{width:70px;height:70px;border-radius:50%;margin-bottom:10px}
+
+/* Team */
+.team-card{background:#101f4d;padding:20px;border-radius:15px;text-align:center;transition:0.4s}
+.team-card img{width:100px;height:100px;border-radius:50%;margin-bottom:10px}
+.team-card:hover{transform:translateY(-10px) scale(1.05);box-shadow:0 20px 40px rgba(0,0,0,0.6)}
+
+/* Glow Heading */
+h1{text-shadow:0 0 10px rgba(255,214,10,0.5)}
+
+/* Footer */
+footer{background:#07132b;padding:50px 0}
+.footer-links a{display:block;color:#fff;text-decoration:none;margin-bottom:8px}
+.footer-links a:hover{color:#ffd60a}
+.social i{font-size:20px;margin-right:10px;color:#ff2e88}
+.copy{border-top:1px solid #222;margin-top:20px;padding-top:15px;text-align:center}
+
+.cursor-dot, .cursor-circle{
+position: fixed;
+pointer-events: none;
+z-index: 9999;
+transform: translate(-50%, -50%);
+}
+
+.cursor-dot{
+width: 8px;
+height: 8px;
+background: #ffd60a;
+border-radius: 50%;
+}
+
+.cursor-circle{
+width: 35px;
+height: 35px;
+border: 2px solid #ff2e88;
+border-radius: 50%;
+transition: 0.15s ease-out;
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg">
+<div class="container">
+<a class="navbar-brand" href="#">Travel</a>
+<button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="nav">
+<ul class="navbar-nav ms-auto align-items-center">
+<li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Activites</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Membership</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Hotels</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+<li class="nav-item me-2"><button class="btn btn-outline-light">Login</button></li>
+<li class="nav-item"><button class="btn-nav">Book Now</button></li>
+</ul>
+</div>
+</div>
+</nav>
+
+
+  <section class="about-section">
+  <div class="about-container">
+
+    <!-- IMAGES -->
+    <div class="about-images">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" class="img1">
+      <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff" class="img2">
+      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" class="img3">
+    </div>
+
+    <!-- CONTENT -->
+    <div class="about-content">
+      <h2>We are world reputed travel agency</h2>
+
+      <p>
+        We provide premium travel experiences with top destinations,
+        safety assurance and expert guides.
+      </p>
+
+      <ul>
+        <li>✔ Exclusive Trips</li>
+        <li>✔ Safety First Always</li>
+        <li>✔ Professional Guide</li>
+      </ul>
+
+      <a href="#" class="btn">Contact With Us →</a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ABOUT -->
+<section class="section container" data-aos="fade-up">
+<div class="row align-items-center">
+<div class="col-md-6 about-text">
+<h1>About Dreamworld Vacations</h1>
+<p>Dreamworld Vacations is your trusted travel partner offering premium tours and unforgettable experiences worldwide.Dreamworld vacations India pvt ltd offers an extensive range of hotels and resorts located in popular destinations around the world. We have the perfect place for you and your family to enjoy your holidays to its fullest and collect memories for life.</p>
+<p>We focus on comfort, adventure, and value in every journey.</p>
+</div>
+<div class="col-md-6">
+<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" class="img-fluid rounded">
+</div>
+</div>
+</section>
+
+<!-- COUNTERS -->
+<section class="section container text-center" data-aos="zoom-in">
+<div class="row">
+<div class="col-md-4 counter"><h1 class="count" data-target="500">0</h1><p>Happy Clients</p></div>
+<div class="col-md-4 counter"><h1 class="count" data-target="120">0</h1><p>Tours Completed</p></div>
+<div class="col-md-4 counter"><h1 class="count" data-target="50">0</h1><p>Destinations</p></div>
+</div>
+</section>
+
+<!-- VISION & MISSION -->
+<section class="section container" data-aos="fade-up">
+<div class="row g-4">
+<div class="col-md-6">
+<div class="box text-center">
+<i class="fa fa-eye"></i>
+<h3>Our Vision</h3>
+<p>To become the most trusted travel company.</p>
+</div>
+</div>
+<div class="col-md-6">
+<div class="box text-center">
+<i class="fa fa-bullseye"></i>
+<h3>Our Mission</h3>
+<p>To deliver exceptional travel services with satisfaction.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TESTIMONIAL SLIDER -->
+<section class="section container" data-aos="fade-up">
+<h1 class="text-center mb-5" style="color:#ffd60a">Testimonials</h1>
+<div id="testi" class="carousel slide" data-bs-ride="carousel">
+<div class="carousel-inner">
+<div class="carousel-item active">
+<div class="testimonial">
+<img src="https://randomuser.me/api/portraits/women/1.jpg">
+<p>"Amazing experience!"</p>
+<h6>- Priya</h6>
+</div>
+</div>
+<div class="carousel-item">
+<div class="testimonial">
+<img src="https://randomuser.me/api/portraits/men/2.jpg">
+<p>"Best travel agency!"</p>
+<h6>- Rahul</h6>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TEAM -->
+<section class="section container" data-aos="zoom-in">
+<h1 class="text-center mb-5" style="color:#ffd60a">Our Team</h1>
+<div class="row g-4">
+<div class="col-md-4">
+<div class="team-card">
+<img src="https://randomuser.me/api/portraits/men/5.jpg">
+<h5>John</h5>
+<p>CEO</p>
+</div>
+</div>
+<div class="col-md-4">
+<div class="team-card">
+<img src="https://randomuser.me/api/portraits/women/6.jpg">
+<h5>Neha</h5>
+<p>Manager</p>
+</div>
+</div>
+<div class="col-md-4">
+<div class="team-card">
+<img src="https://randomuser.me/api/portraits/men/7.jpg">
+<h5>Arjun</h5>
+<p>Travel Expert</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section class="section container" data-aos="fade-up">
+<h1 class="text-center mb-5" style="color:#ffd60a">Our Achievements</h1>
+<div class="row g-4 text-center">
+
+<div class="col-md-3">
+<div class="box">
+<i class="fa fa-trophy"></i>
+<h4>Best Travel Agency</h4>
+<p>2024 Award Winner</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="box">
+<i class="fa fa-star"></i>
+<h4>5 Star Rating</h4>
+<p>From 1000+ Clients</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="box">
+<i class="fa fa-globe"></i>
+<h4>Global Tours</h4>
+<p>50+ Destinations</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="box">
+<i class="fa fa-heart"></i>
+<h4>Customer Love</h4>
+<p>98% Satisfaction</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- APPRECIATION -->
+<section class="section container" data-aos="zoom-in">
+<h1 class="text-center mb-5" style="color:#ffd60a">Appreciation</h1>
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="testimonial">
+<p>"Thank you Dreamworld for such an amazing honeymoon trip!"</p>
+<h6>- Client Review</h6>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="testimonial">
+<p>"Professional service and great support throughout the journey."</p>
+<h6>- Client Review</h6>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="testimonial">
+<p>"Highly recommended for affordable and luxury travel."</p>
+<h6>- Client Review</h6>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- CERTIFICATES -->
+<section class="section container" data-aos="fade-up">
+<h1 class="text-center mb-5" style="color:#ffd60a">Our Certifications</h1>
+<div class="row g-4 text-center">
+
+<div class="col-md-4">
+<img src="https://via.placeholder.com/300x200?text=Certificate+1" class="img-fluid rounded shadow">
+<p class="mt-2">ISO Certified Travel Agency</p>
+</div>
+
+<div class="col-md-4">
+<img src="https://via.placeholder.com/300x200?text=Certificate+2" class="img-fluid rounded shadow">
+<p class="mt-2">Government Registered</p>
+</div>
+
+<div class="col-md-4">
+<img src="https://via.placeholder.com/300x200?text=Certificate+3" class="img-fluid rounded shadow">
+<p class="mt-2">Trusted Partner Award</p>
+</div>
+
+</div>
+</section>
+
+<!-- VIDEO TESTIMONIALS -->
+<section class="section container" data-aos="zoom-in">
+<h1 class="text-center mb-5" style="color:#ffd60a">Video Testimonials</h1>
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="ratio ratio-16x9">
+<iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" title="YouTube video" allowfullscreen></iframe>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="ratio ratio-16x9">
+<iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" title="YouTube video" allowfullscreen></iframe>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="ratio ratio-16x9">
+<iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" title="YouTube video" allowfullscreen></iframe>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="container">
+<div class="row">
+
+<div class="col-md-4">
+<h5>Travel</h5>
+<p>Best travel agency for tours, flights and hotels worldwide.</p>
+<div class="social">
+<i class="fab fa-facebook"></i>
+<i class="fab fa-instagram"></i>
+<i class="fab fa-twitter"></i>
+</div>
+</div>
+
+<div class="col-md-2 footer-links">
+<h6>Quick Links</h6>
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Services</a>
+<a href="#">Contact</a>
+</div>
+
+<div class="col-md-3 footer-links">
+<h6>Services</h6>
+<a href="#">Flights</a>
+<a href="#">Hotels</a>
+<a href="#">Tours</a>
+<a href="#">Transport</a>
+</div>
+
+<div class="col-md-3">
+<h6>Contact</h6>
+<p>Email: info@travel.com</p>
+<p>Phone: +91 9876543210</p>
+<p>Location: India</p>
+</div>
+
+</div>
+
+<div class="copy">
+<p>© 2026 Travel Agency | All Rights Reserved</p>
+</div>
+
+</div>
+</footer>
+<div class="cursor-dot"></div>
+<div class="cursor-circle"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init();
+
+// Counter Animation
+const counters = document.querySelectorAll('.count');
+counters.forEach(counter => {
+  const updateCount = () => {
+    const target = +counter.getAttribute('data-target');
+    const count = +counter.innerText;
+    const inc = target / 100;
+
+    if(count < target){
+      counter.innerText = Math.ceil(count + inc);
+      setTimeout(updateCount, 20);
+    } else {
+      counter.innerText = target + '+';
+    }
+  };
+  updateCount();
+});
+</script>
+
+<script>
+const dot = document.querySelector('.cursor-dot');
+const circle = document.querySelector('.cursor-circle');
+
+let mouseX = 0, mouseY = 0;
+let circleX = 0, circleY = 0;
+
+document.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+
+  dot.style.left = mouseX + 'px';
+  dot.style.top = mouseY + 'px';
+});
+
+function animate() {
+  circleX += (mouseX - circleX) * 0.1;
+  circleY += (mouseY - circleY) * 0.1;
+
+  circle.style.left = circleX + 'px';
+  circle.style.top = circleY + 'px';
+
+  requestAnimationFrame(animate);
+}
+animate();
+
+// Hover effect
+document.querySelectorAll('a, button').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    circle.style.transform = 'translate(-50%, -50%) scale(1.5)';
+  });
+  el.addEventListener('mouseleave', () => {
+    circle.style.transform = 'translate(-50%, -50%) scale(1)';
+  });
+});
+</script>
+<div class="cursor-dot" id="cursorDot"></div>
+
+<script>
+const dot = document.getElementById('cursorDot');
+document.addEventListener('mousemove', (e) => {
+  dot.style.left = e.clientX + 'px';
+  dot.style.top = e.clientY + 'px';
+});
+</script>
+
+
+</body>
+</html>
