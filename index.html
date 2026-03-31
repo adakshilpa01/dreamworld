@@ -6,22 +6,74 @@
 <title>Travel Agency Home</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-body{font-family:playfair display;background:#0b1a3a;color:#fff}
+body{font-family:'Poppins',sans-serif;background:#0b0b0b;color:#fff;margin:0;overflow-x: hidden;}
+.top-header {
+  background: #000; /* pure black */
+  color: #D4AF37; /* gold text */
+  font-size: 14px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
 
+.top-header .container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LEFT */
+.top-left span {
+  margin-right: 25px;
+  color: #D4AF37;
+}
+
+.top-left i {
+  margin-right: 6px;
+  color: #FFD700; /* brighter gold for icons */
+}
+
+/* RIGHT ICONS */
+.top-right a {
+  color: #D4AF37;
+  margin-left: 15px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT 🔥 */
+.top-right a:hover {
+  color: #FFD700;
+  transform: translateY(-2px);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .top-header .container {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+}
 /* Navbar */
-.navbar{background:#07132b;padding:15px 0}
-.navbar-brand{font-weight:bold;font-size:24px;color:#ffd60a !important}
+.navbar{background:#000;padding:15px 0}
+.navbar-brand{font-weight:bold;font-size:24px;color:#ffd700 !important}
 .nav-link{color:#fff !important;margin:0 10px}
-.nav-link:hover{color:#ff2e88 !important}
-.btn-nav{background:#ff2e88;color:#fff;border:none;padding:8px 18px;border-radius:6px}
-.dropdown:hover .dropdown-menu {
-  display: block;
+.nav-link:hover{color:#D4AF37 !important}
+.btn-nav{background:#D4AF37;color:#0b0b0b;border:none;padding:8px 18px;border-radius:6px}
+.dropdown:hover .dropdown-menu {display: block;}
+.logo
+{
+  height: 50px;
 }
 /* Dropdown box */
 .dropdown-menu {
-  background: #0b1d3a;   /* dark blue */
+  background: #000;   /* dark blue */
   border-radius: 10px;
   padding: 10px 0;
   border: none;
@@ -65,59 +117,187 @@ body{font-family:playfair display;background:#0b1a3a;color:#fff}
   left: 0;
   bottom: -5px;
 }
-.carousel-item{
-position: relative;
+
+.main-slider{
+  position:relative;
+  height:70vh;
+  overflow:hidden;
 }
 
-.carousel-item img{
-filter: blur(3px);
-transform: scale(1.03);
+/* slides */
+.ms-slide{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background-size:cover;
+  background-position:center;
+  opacity:0;
+  transform:scale(1.1);
+  transition:1.5s ease;
 }
 
-.carousel-item::after{
-content: "";
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: rgba(0,0,0,0.4); /* dark overlay */
+.ms-slide.active{
+  opacity:1;
+  transform:scale(1);
 }
 
-.carousel-caption{
-z-index: 2;
+/* overlay */
+.ms-overlay{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
 }
 
-.carousel-caption .btn-main{
-padding: 8px 18px;
-font-size: 24px;
-background:#ffd60a;
-color:#fff;
-border-radius:6px;
-transition: all 0.3s ease;
+/* content */
+.ms-content{
+  position:absolute;
+  top:50%;
+  left:8%;
+  transform:translateY(-50%);
+  color:#fff;
+  z-index:2;
+  font-size: 30px;
+  font-family:Poppins,sans-serif;
 }
 
-/* Hover effect 🔥 */
-.carousel-caption .btn-main:hover{
-background:#ff2e88;
-color:#fff;
-transform: translateY(-3px) scale(1.05);
-box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+/* arrows */
+.ms-arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:30px;
+  color:#fff;
+  cursor:pointer;
+  z-index:3;
+}
+
+.ms-arrow.left{ left:20px; }
+.ms-arrow.right{ right:20px; }
+
+/* dots */
+.ms-dots{
+  position:absolute;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.ms-dots span{
+  display:inline-block;
+  width:10px;
+  height:10px;
+  background:#fff;
+  margin:5px;
+  border-radius:50%;
+  cursor:pointer;
+  opacity:0.5;
+}
+
+.ms-dots span.active{
+  opacity:1;
 }
 
 /* Hero */
 .hero{height:90vh;background:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center}
 .hero h1{font-size:60px;font-weight:bold}
 .hero span{color:#ff2e88}
-.btn-main{background:#ffd60a;color:#000;border:none;padding:12px 25px;border-radius:8px}
+.btn-main{background:#FFD700;color:#000;padding:12px 25px;border:none;border-radius:8px;}
 
 .section{padding:80px 0}
+.section h2
+{
+  color: #D4AF37;
+}
+.section i{
+  margin-right: 10px; 
+}
+
+/*why*/
+
+/* SECTION */
+.why-choose {
+  background: #0b0b0b;
+  padding: 80px 10%;
+  color: #D4AF37;
+}
+
+/* CONTAINER */
+.cont {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+/* LEFT IMAGE */
+.left img {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.left img:hover {
+  transform: scale(1.05);
+}
+
+/* RIGHT CONTENT */
+.right {
+  flex: 1;
+}
+
+.right h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+  color: #D4AF37;
+}
+
+/* POINTS */
+.points .item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.points .item i {
+  color: #D4AF37;
+  margin-right: 15px;
+  font-size: 20px;
+}
+
+/* HOVER EFFECT */
+.points .item:hover {
+  transform: translateX(10px);
+  color: #fdb913;
+}
+
+.points .item:hover i {
+  text-shadow: 0 0 10px #fdb913;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .points .item {
+    justify-content: center;
+  }
+}
+.travel-section h2{
+  color: #D4AF37;
+
+}
 .travel-section{
 text-align:center;
 padding:80px 20px;
-background:#0b1a3a;
+background:#1a1a1a;
 }
-
 .travel-cards{
 display:flex;
 gap:25px;
@@ -194,13 +374,16 @@ box-shadow:0 20px 50px rgba(0,0,0,0.7);
 
 /* HERO */
 .hero2 {
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
+  padding: 100px 0;
   background: url("bg1.jpg") center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
+  background:#1a1a1a;
 }
 
 /* OVERLAY */
@@ -216,7 +399,7 @@ box-shadow:0 20px 50px rgba(0,0,0,0.7);
 .hero-content {
   position: relative;
   text-align: center;
-  color: white;
+  color: #D4AF37;
   z-index: 2;
 }
 
@@ -226,10 +409,11 @@ h1 {
 }
 
 /* SLIDER */
-.slider {
-  width: 800px;
+.slider2 {
+  width: 100%;
+  max-width: 900px;
   overflow: hidden;
-  margin-top: 40px;
+  margin: 40px auto;
 }
 
 .track2 {
@@ -303,7 +487,7 @@ h1 {
 
 .testimonial{
   padding:100px 20px;
-  background:#0b1a3a;
+  background:#0b0b0b;
   text-align:center;
   color:#fff;
 }
@@ -361,17 +545,7 @@ h1 {
   padding:150px 10%;
   position:relative;
   overflow:hidden;
-  background: #ffd60a;
-}
-
-/* MAP BG */
-.hero3::before{
-  content:"";
-  position:absolute;
-  width:100%;
-  height:100%;
-  background:url("https://www.transparenttextures.com/patterns/cubes.png");
-  opacity:0.08;
+  background: #0b0b0b;
 }
 
 /* LAYOUT */
@@ -433,34 +607,6 @@ h1 {
 
 .float-card img{width:100%}
 
-/* ✈ PLANE PATH */
-.plane{
-  position:absolute;
-  width:100px;
-  top:50%;
-  left:-120px;
-  animation: flyCurve 10s linear infinite;
-}
-
-/* TRAIL LINE */
-.trail{
-  position:absolute;
-  width:200px;
-  height:2px;
-  background:linear-gradient(to right, transparent, #00aaff);
-  top:52%;
-  left:-200px;
-  animation: trailMove 10s linear infinite;
-}
-
-/* 📍 LOCATION PIN */
-.pin{
-  position:absolute;
-  width:40px;
-  left:1200%;
-  top:30%;
-  animation: bounce 1.5s infinite;
-}
 
 /* ANIMATIONS */
 @keyframes flyCurve{
@@ -507,7 +653,7 @@ h1 {
 .features2{
   padding:80px 5%;
   text-align:center;
-  background:#0b1a3a; /* same dark theme */
+  background:#0b0b0b; /* same dark theme */
   color:#fff;
 }
 
@@ -795,9 +941,9 @@ h1 {
     box-shadow: 0 0 20px rgba(250,204,21,0.6);
 }
 
-.card-custom{background:#101f4d;border-radius:15px;padding:25px;text-align:center;transition:.3s}
+.card-custom{background:#D4AF37;border-radius:15px;padding:25px;text-align:center;transition:.3s;color:#0b0b0b}
 .card-custom:hover{transform:translateY(-10px);box-shadow:0 10px 30px rgba(0,0,0,0.5)}
-.icon{font-size:40px;color:#ff2e88;margin-bottom:15px}
+.icon{font-size:40px;color:#0b0b0b;margin-bottom:15px}
 
 .dest img{border-radius:15px;height:250px;object-fit:cover}
 
@@ -1008,13 +1154,13 @@ input {
 
 
 /* Footer */
-footer{background:#07132b;padding:50px 0}
+footer{background:#0b0b0b;padding:50px 0}
 .footer-links a{display:block;color:#fff;text-decoration:none;margin-bottom:8px}
 .footer-links a:hover{color:#ffd60a}
 .social i{font-size:20px;margin-right:10px;color:#ff2e88}
 .copy{border-top:1px solid #222;margin-top:20px;padding-top:15px;text-align:center}
 
-.cursor-dot, .cursor-circle{
+.cursor-dot{
 position: fixed;
 pointer-events: none;
 z-index: 9999;
@@ -1027,25 +1173,40 @@ height: 8px;
 background: #ffd60a;
 border-radius: 50%;
 }
-
-.cursor-circle{
-width: 35px;
-height: 35px;
-border: 2px solid #ff2e88;
-border-radius: 50%;
-transition: 0.15s ease-out;
-}
 </style>
 </head>
 <body>
 
+<!-- TOP HEADER START -->
+<div class="top-header">
+  <div class="container">
+    
+    <!-- LEFT -->
+    <div class="top-left">
+      <span>
+        <i class="fas fa-phone-alt"></i> +91 9876543210
+      </span>
+      <span>
+        <i class="fas fa-envelope"></i> support@yourwebsite.com
+      </span>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="top-right">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+
+  </div>
+</div>
+<!-- TOP HEADER END -->
+
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg">
 <div class="container">
-<a class="navbar-brand" href="#">Travel</a>
-<button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-<span class="navbar-toggler-icon"></span>
-</button>
+  <a href="index.html" class="navbar-brand"><img src="WhatsApp Image 2026-03-30 at 4.08.10 PM.jpeg" class="logo"></a>
 <div class="collapse navbar-collapse" id="nav">
 <ul class="navbar-nav ms-auto align-items-center">
 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
@@ -1061,85 +1222,41 @@ transition: 0.15s ease-out;
 </li>
 <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-<li class="nav-item me-2"><button class="btn btn-outline-light">Login</button></li>
-<li class="nav-item"><button class="btn-nav">Book Now</button></li>
+<li class="nav-item"><button class="btn-nav">Login</button></li>
 </ul>
 </div>
 </div>
 </nav>
+<!-- MAIN SLIDER START -->
+<section class="main-slider">
 
-<!-- SLIDER -->
-<section>
-<div id="mainSlider" class="carousel slide" data-bs-ride="carousel">
-
-<div class="carousel-indicators">
-<button type="button" data-bs-target="#mainSlider" data-bs-slide-to="0" class="active"></button>
-<button type="button" data-bs-target="#mainSlider" data-bs-slide-to="1"></button>
-<button type="button" data-bs-target="#mainSlider" data-bs-slide-to="2"></button>
-<button type="button" data-bs-target="#mainSlider" data-bs-slide-to="3"></button>
-</div>
-
-<div class="carousel-inner">
-
-<div class="carousel-item active">
-<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" class="d-block w-100" style="height:80vh;object-fit:cover;">
-<div class="carousel-caption d-flex flex-column justify-content-center h-100">
-<h1>Explore The <span style='color:#ff2e88'>World</span></h1>
-<p>Best tours & travel packages</p>
-<button class="btn-main">Book Now</button>
-</div>
-</div>
-
-<div class="carousel-item">
-<img src="cold-snow-dawn-618833.jpg" class="d-block w-100" style="height:80vh;object-fit:cover;">
-<div class="carousel-caption d-flex flex-column justify-content-center h-100">
-<h1>Discover New Places</h1>
-<p>Adventure awaits you</p>
-<button class="btn-main">Book Now</button>
-</div>
-</div>
-
-<div class="carousel-item">
-<img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b" class="d-block w-100" style="height:80vh;object-fit:cover;">
-<div class="carousel-caption d-flex flex-column justify-content-center h-100">
-<h1>Travel With Us</h1>
-<p>Make your journey memorable</p>
-<button class="btn-main">Book Now</button>
-</div>
-</div>
-
-<div class="carousel-item">
-<img src="d.jpg" class="d-block w-100" style="height:80vh;object-fit:cover;">
-<div class="carousel-caption d-flex flex-column justify-content-center h-100">
-<h1>Discover New Places</h1>
-<p>Adventure awaits you</p>
-<button class="btn-main">Book Now</button>
-</div>
-</div>
+  <!-- SLIDES -->
+  <div class="ms-slide active" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e')"></div>
+  <div class="ms-slide" style="background-image:url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1')"></div>
+  <div class="ms-slide" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee')"></div>
 
 
-</div>
+  <!-- OVERLAY -->
+  <div class="ms-overlay"></div>
 
-<button class="carousel-control-prev" type="button" data-bs-target="#mainSlider" data-bs-slide="prev">
-<span class="carousel-control-prev-icon"></span>
-</button>
-<button class="carousel-control-next" type="button" data-bs-target="#mainSlider" data-bs-slide="next">
-<span class="carousel-control-next-icon"></span>
-</button>
+  <!-- CONTENT -->
+  <div class="ms-content">
+    <p>Get unforgettable pleasure with us</p>
+    <h1>Natural Wonder<br>of the world</h1>
 
-</div>
+    <a href="#" class="btn btn-yellow">Explore Tours</a>
+    <a href="#" class="btn btn-outline">Our Services</a>
+  </div>
+
+  <!-- ARROWS -->
+  <div class="ms-arrow left">&#10094;</div>
+  <div class="ms-arrow right">&#10095;</div>
+
+  <!-- DOTS -->
+  <div class="ms-dots"></div>
+
 </section>
-
-<!-- SERVICES -->
-<section class="section container">
-<h2 class="text-center mb-5">Our Services</h2>
-<div class="row g-4">
-<div class="col-md-3"><div class="card-custom"><i class="fa fa-plane icon"></i><h5>Flights</h5></div></div>
-<div class="col-md-3"><div class="card-custom"><i class="fa fa-hotel icon"></i><h5>Hotels</h5></div></div>
-<div class="col-md-3"><div class="card-custom"><i class="fa fa-map icon"></i><h5>Tours</h5></div></div>
-<div class="col-md-3"><div class="card-custom"><i class="fa fa-car icon"></i><h5>Transport</h5></div></div>
-</div>
-</section>
+<!-- MAIN SLIDER END -->
 
 <section class="travel-section">
   <h2 class="text-center mb-5">Travel Your Way</h2>
@@ -1181,22 +1298,56 @@ transition: 0.15s ease-out;
   </div>
 </section>
 
-<!-- WHY US -->
+<!-- SERVICES -->
 <section class="section container">
-<div class="row align-items-center">
-<div class="col-md-6">
-<img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1" class="img-fluid rounded">
+<h2 class="text-center mb-5"><i class="fas fa-plane-departure"></i>Our Services</h2>
+<div class="row g-4">
+<div class="col-md-3"><div class="card-custom"><i class="fa fa-plane icon"></i><h5>Flights</h5></div></div>
+<div class="col-md-3"><div class="card-custom"><i class="fa fa-hotel icon"></i><h5>Hotels</h5></div></div>
+<div class="col-md-3"><div class="card-custom"><i class="fa fa-map icon"></i><h5>Tours</h5></div></div>
+<div class="col-md-3"><div class="card-custom"><i class="fa fa-car icon"></i><h5>Transport</h5></div></div>
 </div>
-<div class="col-md-6">
-<h2>Why Choose Us</h2>
-<ul>
-<li>Best Price</li>
-<li>24/7 Support</li>
-<li>Expert Guides</li>
-<li>Easy Booking</li>
-</ul>
-</div>
-</div>
+</section>
+<!-- WHY US -->
+
+<section class="why-choose">
+  <div class="cont">
+
+    <!-- LEFT IMAGE -->
+    <div class="left">
+      <img src="beach.jpg" alt="World Map">
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="right">
+      <h2>Why Choose Us</h2>
+
+      <div class="points">
+
+        <div class="item">
+          <i class="fas fa-tag"></i>
+          <span>Best Price Guarantee</span>
+        </div>
+
+        <div class="item">
+          <i class="fas fa-headset"></i>
+          <span>24/7 Support</span>
+        </div>
+
+        <div class="item">
+          <i class="fas fa-user-tie"></i>
+          <span>Expert Travel Guides</span>
+        </div>
+
+        <div class="item">
+          <i class="fas fa-plane"></i>
+          <span>Easy Booking</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
 </section>
 
 <section class="hero2">
@@ -1279,13 +1430,6 @@ transition: 0.15s ease-out;
 
 
 <section class="hero3">
-
-  <!-- ✈ Plane + Trail -->
-  <div class="trail"></div>
-  <img src="R.png" class="plane">
-
-  <!-- 📍 Pin -->
-  <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" class="pin">
 
   <div class="hero-row">
 
@@ -1590,9 +1734,43 @@ transition: 0.15s ease-out;
 </div>
 </footer>
 <div class="cursor-dot"></div>
-<div class="cursor-circle"></div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+let slides = document.querySelectorAll('.ms-slide');
+let dotsContainer = document.querySelector('.ms-dots');
+let index = 0;
+
+/* CREATE DOTS */
+slides.forEach((_, i)=>{
+  let dot = document.createElement('span');
+  if(i===0) dot.classList.add('active');
+  dot.addEventListener('click', ()=>showSlide(i));
+  dotsContainer.appendChild(dot);
+});
+
+let dots = document.querySelectorAll('.ms-dots span');
+
+function showSlide(i){
+  slides[index].classList.remove('active');
+  dots[index].classList.remove('active');
+  index = i;
+  slides[index].classList.add('active');
+  dots[index].classList.add('active');
+}
+
+/* AUTO */
+setInterval(()=>showSlide((index+1)%slides.length),4000);
+
+/* ARROWS */
+document.querySelector('.ms-arrow.left').onclick=()=>{
+  showSlide((index-1+slides.length)%slides.length);
+}
+
+document.querySelector('.ms-arrow.right').onclick=()=>{
+  showSlide((index+1)%slides.length);
+}
+</script>
 <script>
 const track = document.getElementById("track2");
 const cards = document.querySelectorAll(".card2");
@@ -1735,7 +1913,6 @@ updateT();
 
 <script>
 const dot = document.querySelector('.cursor-dot');
-const circle = document.querySelector('.cursor-circle');
 
 let mouseX = 0, mouseY = 0;
 let circleX = 0, circleY = 0;
@@ -1779,3 +1956,14 @@ document.addEventListener('mousemove', (e) => {
 });
 </script>
 </html>
+
+
+
+
+
+
+
+
+
+
+
