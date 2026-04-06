@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Blog</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#000;
+  color:#fff;
+}
+
+/* HERO */
+.blog-hero{
+  height:40vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+  url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+  background-size:cover;
+}
+
+.blog-hero h1{
+  color:#d4af37;
+  font-size:42px;
+}
+
+/* TOP BAR */
+.blog-top{
+  padding:30px 8%;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:15px;
+}
+
+/* SEARCH */
+.search-box{
+  padding:10px 15px;
+  width:250px;
+  border:none;
+  outline:none;
+  background:#111;
+  color:#fff;
+  border:1px solid #d4af37;
+}
+
+/* FILTER */
+.filters button{
+  padding:8px 15px;
+  margin-right:10px;
+  border:none;
+  cursor:pointer;
+  background:#111;
+  color:#d4af37;
+  border:1px solid #d4af37;
+  transition:0.3s;
+}
+
+.filters button:hover,
+.filters button.active{
+  background:#d4af37;
+  color:#000;
+}
+
+/* GRID */
+.blog-container{
+  padding:40px 8%;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+
+/* CARD */
+.blog-card{
+  background:rgba(255,255,255,0.05);
+  border-radius:15px;
+  overflow:hidden;
+  backdrop-filter:blur(10px);
+  transition:0.4s;
+  display:none;
+}
+
+.blog-card.show{
+  display:block;
+}
+
+.blog-card:hover{
+  transform:translateY(-10px) scale(1.02);
+  box-shadow:0 0 20px rgba(212,175,55,0.4);
+}
+
+.blog-card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  transition:0.4s;
+}
+
+.blog-card:hover img{
+  transform:scale(1.1);
+}
+
+.blog-content{
+  padding:15px;
+}
+
+.blog-content h3{
+  color:#d4af37;
+}
+
+.blog-content p{
+  font-size:14px;
+  color:#ccc;
+  margin:10px 0;
+}
+
+.read-more{
+  text-decoration:none;
+  border:1px solid #d4af37;
+  padding:6px 15px;
+  color:#d4af37;
+  display:inline-block;
+}
+
+.read-more:hover{
+  background:#d4af37;
+  color:#000;
+}
+
+/* LOAD MORE */
+.load-more{
+  text-align:center;
+  margin:30px;
+}
+
+.load-more button{
+  padding:10px 25px;
+  border:none;
+  background:#d4af37;
+  color:#000;
+  cursor:pointer;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .blog-top{
+    flex-direction:column;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="blog-hero">
+  <h1>Travel Blogs ✈</h1>
+</div>
+
+<!-- TOP BAR -->
+<div class="blog-top">
+
+  <!-- SEARCH -->
+  <input type="text" id="search" class="search-box" placeholder="Search blogs...">
+
+  <!-- FILTER -->
+  <div class="filters">
+    <button class="active" onclick="filterBlog('all')">All</button>
+    <button onclick="filterBlog('domestic')">Domestic</button>
+    <button onclick="filterBlog('international')">International</button>
+  </div>
+
+</div>
+
+<!-- BLOG GRID -->
+<div class="blog-container" id="blogContainer"></div>
+
+<script>
+
+const blogData = [
+
+/* DOMESTIC */
+{title:"Manali Snow Adventure", cat:"domestic", img:"https://images.unsplash.com/photo-1501785888041-af3ef285b470"},
+{title:"Goa Nightlife Guide", cat:"domestic", img:"https://images.unsplash.com/photo-1500534314209-a25ddb2bd429"},
+{title:"Kashmir Paradise Tour", cat:"domestic", img:"https://images.unsplash.com/photo-1493558103817-58b2924bce98"},
+{title:"Rajasthan Royal Heritage", cat:"domestic", img:"https://images.unsplash.com/photo-1524499982521-1ffd58dd89ea"},
+{title:"Kerala Backwater Escape", cat:"domestic", img:"https://images.unsplash.com/photo-1508672019048-805c876b67e2"},
+{title:"Shimla Hill Retreat", cat:"domestic", img:"https://images.unsplash.com/photo-1519681393784-d120267933ba"},
+{title:"Leh Ladakh Bike Trip", cat:"domestic", img:"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"},
+{title:"Andaman Island Tour", cat:"domestic", img:"https://images.unsplash.com/photo-1507525428034-b723cf961d3e"},
+{title:"Udaipur Lake City", cat:"domestic", img:"https://images.unsplash.com/photo-1516483638261-f4dbaf036963"},
+{title:"Darjeeling Tea Gardens", cat:"domestic", img:"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"},
+{title:"Ooty Hill Station", cat:"domestic", img:"https://images.unsplash.com/photo-1500534314209-a25ddb2bd429"},
+{title:"Mussoorie Weekend Trip", cat:"domestic", img:"https://images.unsplash.com/photo-1501785888041-af3ef285b470"},
+{title:"Rishikesh River Rafting", cat:"domestic", img:"https://images.unsplash.com/photo-1507525428034-b723cf961d3e"},
+{title:"Jaipur Pink City", cat:"domestic", img:"https://images.unsplash.com/photo-1524499982521-1ffd58dd89ea"},
+{title:"Agra Taj Mahal Tour", cat:"domestic", img:"https://images.unsplash.com/photo-1500534314209-a25ddb2bd429"},
+{title:"Coorg Coffee Hills", cat:"domestic", img:"https://images.unsplash.com/photo-1508672019048-805c876b67e2"},
+{title:"Munnar Nature Escape", cat:"domestic", img:"https://images.unsplash.com/photo-1519681393784-d120267933ba"},
+{title:"Kodaikanal Lake View", cat:"domestic", img:"https://images.unsplash.com/photo-1501785888041-af3ef285b470"},
+{title:"Spiti Valley Adventure", cat:"domestic", img:"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"},
+{title:"Mount Abu Retreat", cat:"domestic", img:"https://images.unsplash.com/photo-1524499982521-1ffd58dd89ea"},
+{title:"Pondicherry Beach Walk", cat:"domestic", img:"https://images.unsplash.com/photo-1500534314209-a25ddb2bd429"},
+{title:"Hampi Heritage Ruins", cat:"domestic", img:"https://images.unsplash.com/photo-1501785888041-af3ef285b470"},
+{title:"Alleppey Houseboat Stay", cat:"domestic", img:"https://images.unsplash.com/photo-1508672019048-805c876b67e2"},
+{title:"Meghalaya Waterfalls", cat:"domestic", img:"https://images.unsplash.com/photo-1507525428034-b723cf961d3e"},
+{title:"Tawang Scenic Beauty", cat:"domestic", img:"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"},
+
+/* INTERNATIONAL */
+{title:"Dubai Luxury Escape", cat:"international", img:"https://images.unsplash.com/photo-1519125323398-675f0ddb6308"},
+{title:"Bali Tropical Paradise", cat:"international", img:"https://images.unsplash.com/photo-1494475673543-6a6a27143b3f"},
+{title:"Thailand Island Hopping", cat:"international", img:"https://images.unsplash.com/photo-1505761671935-60b3a7427bad"},
+{title:"Singapore City Lights", cat:"international", img:"https://images.unsplash.com/photo-1526772662000-3f88f10405ff"},
+{title:"Paris Romantic Getaway", cat:"international", img:"https://images.unsplash.com/photo-1502602898657-3e91760cbb34"},
+{title:"Maldives Water Villas", cat:"international", img:"https://images.unsplash.com/photo-1512453979798-5ea266f8880c"},
+{title:"Switzerland Alps Tour", cat:"international", img:"https://images.unsplash.com/photo-1501785888041-af3ef285b470"},
+{title:"London City Explorer", cat:"international", img:"https://images.unsplash.com/photo-1473959383414-9f0b3d36c1a7"},
+{title:"New York City Life", cat:"international", img:"https://images.unsplash.com/photo-1496588152823-86ff7695b6cf"},
+{title:"Turkey Cappadocia Ride", cat:"international", img:"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"},
+{title:"Greece Santorini Views", cat:"international", img:"https://images.unsplash.com/photo-1507525428034-b723cf961d3e"},
+{title:"Italy Venice Canals", cat:"international", img:"https://images.unsplash.com/photo-1502602898657-3e91760cbb34"},
+{title:"Japan Cherry Blossom", cat:"international", img:"https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e"},
+{title:"Australia Sydney Tour", cat:"international", img:"https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9"},
+{title:"Canada Nature Escape", cat:"international", img:"https://images.unsplash.com/photo-1501785888041-af3ef285b470"},
+{title:"Egypt Pyramid Tour", cat:"international", img:"https://images.unsplash.com/photo-1505739777777-0c5c1c1f9c55"},
+{title:"Thailand Phuket Beaches", cat:"international", img:"https://images.unsplash.com/photo-1505761671935-60b3a7427bad"},
+{title:"Bali Ubud Retreat", cat:"international", img:"https://images.unsplash.com/photo-1494475673543-6a6a27143b3f"},
+{title:"Dubai Desert Safari", cat:"international", img:"https://images.unsplash.com/photo-1519125323398-675f0ddb6308"},
+{title:"Spain Barcelona Tour", cat:"international", img:"https://images.unsplash.com/photo-1501785888041-af3ef285b470"},
+{title:"Germany Berlin Trip", cat:"international", img:"https://images.unsplash.com/photo-1496588152823-86ff7695b6cf"},
+{title:"South Korea Seoul Life", cat:"international", img:"https://images.unsplash.com/photo-1500534314209-a25ddb2bd429"},
+{title:"Indonesia Island Tour", cat:"international", img:"https://images.unsplash.com/photo-1507525428034-b723cf961d3e"},
+{title:"Malaysia Kuala Lumpur", cat:"international", img:"https://images.unsplash.com/photo-1526772662000-3f88f10405ff"},
+{title:"Sri Lanka Beach Tour", cat:"international", img:"https://images.unsplash.com/photo-1500534314209-a25ddb2bd429"}
+
+];
+
+/* GENERATE BLOGS */
+let container = document.getElementById("blogContainer");
+
+blogData.forEach((blog)=>{
+  let card = `
+    <div class="blog-card ${blog.cat} show">
+      <img src="${blog.img}">
+      <div class="blog-content">
+        <h3>${blog.title}</h3>
+        <p>Explore amazing travel experience with premium packages.</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </div>
+  `;
+  container.innerHTML += card;
+});
+
+</script>
+
+</body>
+</html>

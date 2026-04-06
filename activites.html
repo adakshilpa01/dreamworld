@@ -5,23 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Premium Slider</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
 <style>
-
-
-body{font-family:playfair display;background:#0b1a3a;color:#fff}
-
-/* Navbar */
-.navbar{background:#07132b;padding:15px 0}
-.navbar-brand{font-weight:bold;font-size:24px;color:#ffd60a !important}
-.nav-link{color:#fff !important;margin:0 10px}
-.nav-link:hover{color:#ff2e88 !important}
-.btn-nav{background:#ff2e88;color:#fff;border:none;padding:8px 18px;border-radius:6px}
-
-/* Hero */
-.hero{height:90vh;background:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center}
-.hero h1{font-size:60px;font-weight:bold}
-.hero span{color:#ff2e88}
-.btn-main{background:#ffd60a;color:#000;border:none;padding:12px 25px;border-radius:8px}
 
 /* RESET */
 *{
@@ -31,8 +18,112 @@ body{font-family:playfair display;background:#0b1a3a;color:#fff}
   font-family: 'Poppins', sans-serif;
 }
 
-body{
-  background:#000;
+body{font-family:'Poppins',sans-serif;background:#0b0b0b;color:#fff;margin:0;overflow-x: hidden;}
+.top-header {
+  background: #000; /* pure black */
+  color: #d4af37; /* gold text */
+  font-size: 20px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.top-header .container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LEFT */
+.top-left span {
+  margin-right: 25px;
+  color: #D4AF37;
+}
+
+.top-left i {
+  margin-right: 6px;
+  color: #d4af37; /* brighter gold for icons */
+}
+
+/* RIGHT ICONS */
+.top-right a {
+  color: #D4AF37;
+  margin-left: 15px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT 🔥 */
+.top-right a:hover {
+  color: #d4af37;
+  transform: translateY(-2px);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .top-header .container {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+}
+/* Navbar */
+.navbar{background:#000;padding:15px 0}
+.navbar-brand{font-weight:bold;font-size:24px;color:#d4af37 !important}
+.nav-link{color:#fff !important;margin:0 10px}
+.nav-link:hover{color:#D4AF37 !important}
+.btn-nav{background:#D4AF37;color:#0b0b0b;border:none;padding:8px 18px;border-radius:6px}
+.dropdown:hover .dropdown-menu {display: block;}
+.logo
+{
+  height: 60px;
+}
+/* Dropdown box */
+.dropdown-menu {
+  background: #000;   /* dark blue */
+  border-radius: 10px;
+  padding: 10px 0;
+  border: none;
+  margin-top: 10px;
+  min-width: 200px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* Items */
+.dropdown-menu .dropdown-item {
+  color: #fff;
+  padding: 10px 20px;
+  transition: 0.3s;
+}
+
+/* Hover effect */
+.dropdown-menu .dropdown-item:hover {
+  background: transparent;
+  color: #d4af37;   /* yellow */
+  transform: translateX(5px);
+}
+
+/* Hover open */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Navbar link */
+.nav-link {
+  position: relative;
+  color: white;
+}
+
+/* Yellow underline on hover */
+.nav-link:hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #d4af37;  /* yellow */
+  left: 0;
+  bottom: -5px;
 }
 
 /* HERO */
@@ -206,18 +297,13 @@ body{
 @media(max-width:768px){
   .hero-content h1{
     font-size:35px;
-  }
+  }  
 
   .search-box{
     flex-direction:column;
     border-radius:20px;
   }
-body {
-  margin: 0;
-  background: #000;
-  font-family: 'Poppins', sans-serif;
-}
-
+}  
 /* SECTION */
 .tour-section {
   padding: 100px 20px;
@@ -227,7 +313,7 @@ body {
 .tour-section h2 {
   color: #ffc107;
   font-size: 45px;
-  margin-bottom: 70px;
+  margin-bottom: 40px;
 }
 
 /* SWIPER */
@@ -308,12 +394,6 @@ body {
 .swiper-pagination-bullet-active {
   background: #ffc107;
 }
-body{background:#0b1a3a;color:#fff;font-family:Arial}
-.section{padding:80px 0}
-
-/* About */
-.about-text h2{color:#ffd60a}
-.about-text p{opacity:0.9}
 
 /* RESPONSIVE */
 @media(max-width:768px){
@@ -323,47 +403,140 @@ body{background:#0b1a3a;color:#fff;font-family:Arial}
   }
 }
 
+.activities {
+  background: #000;
+  padding: 80px 10%;
+  color: #fff;
+  font-family: Arial;
+}
+
+.activity {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 80px;
+  gap: 50px;
+}
+
+.activity.reverse {
+  flex-direction: row-reverse;
+}
+
+.text {
+  width: 50%;
+}
+
+.text h2 {
+  font-size: 42px;
+  color: #FFD700;
+  margin-bottom: 20px;
+}
+
+.text p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.image {
+  width: 50%;
+}
+
+.image img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: 0.5s;
+}
+
+/* HOVER EFFECT */
+.image img:hover {
+  transform: scale(1.05);
+}
+
+/* SCROLL ANIMATION */
+.activity {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.8s;
+}
+
+.activity.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .activity {
+    flex-direction: column;
+  }
+  .text, .image {
+    width: 100%;
+  }
+}
 
 </style>
 </head>
 
 <body>
+<!-- TOP HEADER START -->
+<div class="top-header">
+  <div class="container">
+    
+    <!-- LEFT -->
+    <div class="top-left">
+      <span>
+        <i class="fas fa-phone-alt"></i> +91 9876543210
+      </span>
+      <span>
+        <i class="fas fa-envelope"></i> support@yourwebsite.com
+      </span>
+    </div>
 
-<section class="hero">
-  <!-- NAVBAR -->
+    <!-- RIGHT -->
+    <div class="top-right">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+
+  </div>
+</div>
+<!-- TOP HEADER END -->
+
+<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg">
 <div class="container">
-<a class="navbar-brand" href="#">Travel</a>
-<button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-<span class="navbar-toggler-icon"></span>
-</button>
+  <a href="index.html" class="navbar-brand"><img src="WhatsApp Image 2026-03-30 at 4.08.10 PM.jpeg" class="logo"></a>
 <div class="collapse navbar-collapse" id="nav">
 <ul class="navbar-nav ms-auto align-items-center">
 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
 <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
 <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
 <li class="nav-item"><a class="nav-link" href="activites.html">Activites</a></li>
-<li class="nav-item"><a class="nav-link" href="#">Membership</a></li>
+<li class="nav-item"><a class="nav-link" href="Membership.html">Membership</a></li>
 <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Hotels</a>
 <ul class="dropdown-menu">
 <li><a class="dropdown-item" href="domestic.html">Domestic</a></li>
 <li><a class="dropdown-item" href="international.html">International</a></li>
 </ul>
 </li>
-<li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+<li class="nav-item"><a class="nav-link" href="blogs.html">Blog</a></li>
 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-<li class="nav-item me-2"><button class="btn btn-outline-light">Login</button></li>
-<li class="nav-item"><button class="btn-nav">Book Now</button></li>
+<li class="nav-item"><button class="btn-nav">Login</button></li>
 </ul>
 </div>
 </div>
 </nav>
 
+<section class="hero">
 
   <!-- SLIDES -->
-  <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e')"></div>
-  <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1')"></div>
-  <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee')"></div>
+  <div class="slide active" style="background-image:url('20.jpg')"></div>
+  <div class="slide" style="background-image:url('19.jpg')"></div>
+  <div class="slide" style="background-image:url('18.jpg')"></div>
 
   <div class="overlay"></div>
 
@@ -404,7 +577,7 @@ body{background:#0b1a3a;color:#fff;font-family:Arial}
 
     <button class="search-btn">Search</button>
   </div>
-
+</section>
 <section class="tour-section">
   <h2>Wonderful Places For You</h2>
 
@@ -412,7 +585,7 @@ body{background:#0b1a3a;color:#fff;font-family:Arial}
     <div class="swiper-wrapper">
 
       <div class="swiper-slide">
-        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+        <img src="13.jpg">
         <div class="slide-content">
           <h3>Beach</h3>
           <p>Relax & Enjoy</p>
@@ -420,7 +593,7 @@ body{background:#0b1a3a;color:#fff;font-family:Arial}
       </div>
 
       <div class="swiper-slide">
-        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+        <img src="15.jpg">
         <div class="slide-content">
           <h3>Mountains</h3>
           <p>Adventure Awaits</p>
@@ -428,7 +601,7 @@ body{background:#0b1a3a;color:#fff;font-family:Arial}
       </div>
 
       <div class="swiper-slide">
-        <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d">
+        <img src="17.jpg">
         <div class="slide-content">
           <h3>City</h3>
           <p>Explore Life</p>
@@ -436,7 +609,7 @@ body{background:#0b1a3a;color:#fff;font-family:Arial}
       </div>
 
       <div class="swiper-slide">
-        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+        <img src="16.jpg">
         <div class="slide-content">
           <h3>Desert</h3>
           <p>Feel the Silence</p>
@@ -444,7 +617,7 @@ body{background:#0b1a3a;color:#fff;font-family:Arial}
       </div>
 
       <div class="swiper-slide">
-        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429">
+        <img src="14.jpg">
         <div class="slide-content">
           <h3>Forest</h3>
           <p>Nature Love</p>
@@ -462,6 +635,99 @@ body{background:#0b1a3a;color:#fff;font-family:Arial}
 
   </div>
 </section>
+<section class="activities">
+
+  <!-- 1 -->
+  <div class="activity">
+    <div class="text">
+      <h2>Hiking</h2>
+      <p>Hiking, walking in nature as a recreational activity. Especially among those with sedentary occupations, hiking is a natural exercise that promotes physical fitness, is economical and convenient, and requires no special equipment. Because hikers can walk as far as they want, there is no physical strain unless they walk among hills or mountains.</p>
+    </div>
+    <div class="image">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="activity reverse">
+    <div class="text">
+      <h2>Fishing</h2>
+      <p>Seine nets encircle and herd fish with a long wall of netting. Long wings and ropes are used to operate the gear, and the net may have a smaller mesh bag called a codend, which retains the catch. When in use, beach seines are hauled to shore by hand or other machinery, and boat seines are towed by one or two vessels. The catch of unwanted species can be a conservation concern in these fisheries. Seine nets are used to catch cod, haddock, hake, pollock, salmon, snapper, and many other species.</p>
+    </div>
+    <div class="image">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="activity">
+    <div class="text">
+      <h2>Paragliding</h2>
+      <p>Paragliding is the recreational and competitive adventure sport of flying paragliders: lightweight, free-flying, foot-launched glider aircraft with no rigid primary structure. The pilot sits in a harness or lies supine in a cocoon-like 'pod' suspended below a fabric wing. However, average starting prices of paragliding experience near New Delhi start from as low as INR 1800/person and can go up to INR 7400/person.</p>
+    </div>
+    <div class="image">
+      <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde">
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="activity reverse">
+    <div class="text">
+      <h2>Cycling</h2>
+      <p></p>
+    </div>
+    <div class="image">
+      <img src="https://images.unsplash.com/photo-1508973379184-7517410fb0fb">
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="activity">
+    <div class="text">
+      <h2>Water Sports</h2>
+      <p>Dive into exciting water adventures like jet skiing, banana rides, and surfing. Perfect for those who love speed and splash.</p>
+    </div>
+    <div class="image">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="activity reverse">
+    <div class="text">
+      <h2>Desert Safari</h2>
+      <p>Enjoy thrilling dune bashing, camel rides, and cultural performances in the desert. A complete adventure experience.</p>
+    </div>
+    <div class="image">
+      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+    </div>
+  </div>
+
+  <!-- 7 -->
+  <div class="activity">
+    <div class="text">
+      <h2>Rock Climbing</h2>
+      <p>Challenge yourself with exciting rock climbing activities. Great for building strength and confidence.</p>
+    </div>
+    <div class="image">
+      <img src="https://images.unsplash.com/photo-1522163182402-834f871fd851">
+    </div>
+  </div>
+
+  <!-- 8 -->
+  <div class="activity reverse">
+    <div class="text">
+      <h2>Camping</h2>
+      <p>Spend peaceful nights under the stars with camping experiences. Enjoy bonfires and nature moments.</p>
+    </div>
+    <div class="image">
+      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+    </div>
+  </div>
+
+</section>
+
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
@@ -537,7 +803,18 @@ var swiper = new Swiper(".mySwiper", {
   keyboard: true,
 });
 </script>
+<script>
+const activities = document.querySelectorAll('.activity');
 
+window.addEventListener('scroll', () => {
+  activities.forEach(act => {
+    const rect = act.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 100){
+      act.classList.add('show');
+    }
+  });
+});
+</script>
 
 </body>
 </html>

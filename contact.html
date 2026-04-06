@@ -12,20 +12,70 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <style>
-body{font-family:playfair display;background:#0b1a3a;color:#fff}
+body{font-family:'Poppins',sans-serif;background:#0b0b0b;color:#fff;margin:0;overflow-x: hidden;}
+.top-header {
+  background: #000; /* pure black */
+  color: #d4af37; /* gold text */
+  font-size: 14px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
 
+.top-header .container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LEFT */
+.top-left span {
+  margin-right: 25px;
+  color: #D4AF37;
+}
+
+.top-left i {
+  margin-right: 6px;
+  color: #d4af37; /* brighter gold for icons */
+}
+
+/* RIGHT ICONS */
+.top-right a {
+  color: #D4AF37;
+  margin-left: 15px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT 🔥 */
+.top-right a:hover {
+  color: #d4af37;
+  transform: translateY(-2px);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .top-header .container {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+}
 /* Navbar */
-.navbar{background:#07132b;padding:15px 0}
-.navbar-brand{font-weight:bold;font-size:24px;color:#ffd60a !important}
+.navbar{background:#000;padding:15px 0}
+.navbar-brand{font-weight:bold;font-size:24px;color:#d4af37 !important}
 .nav-link{color:#fff !important;margin:0 10px}
-.nav-link:hover{color:#ff2e88 !important}
-.btn-nav{background:#ff2e88;color:#fff;border:none;padding:8px 18px;border-radius:6px}
-.dropdown:hover .dropdown-menu {
-  display: block;
+.nav-link:hover{color:#D4AF37 !important}
+.btn-nav{background:#D4AF37;color:#0b0b0b;border:none;padding:8px 18px;border-radius:6px}
+.dropdown:hover .dropdown-menu {display: block;}
+.logo
+{
+  height: 50px;
 }
 /* Dropdown box */
 .dropdown-menu {
-  background: #0b1d3a;   /* dark blue */
+  background: #000;   /* dark blue */
   border-radius: 10px;
   padding: 10px 0;
   border: none;
@@ -44,7 +94,7 @@ body{font-family:playfair display;background:#0b1a3a;color:#fff}
 /* Hover effect */
 .dropdown-menu .dropdown-item:hover {
   background: transparent;
-  color: #ffd700;   /* yellow */
+  color: #d4af37;   /* yellow */
   transform: translateX(5px);
 }
 
@@ -65,7 +115,7 @@ body{font-family:playfair display;background:#0b1a3a;color:#fff}
   position: absolute;
   width: 100%;
   height: 2px;
-  background: #ffd700;  /* yellow */
+  background: #d4af37;  /* yellow */
   left: 0;
   bottom: -5px;
 }
@@ -95,7 +145,7 @@ body{font-family:playfair display;background:#0b1a3a;color:#fff}
 
 .contact-hero h1{
   font-size:42px;
-  color:#FFD700;
+  color:#d4af37;
 }
 
 /* CONTACT INFO */
@@ -105,7 +155,7 @@ body{font-family:playfair display;background:#0b1a3a;color:#fff}
 }
 
 .contact-info h2{
-  color:#FFD700;
+  color:#d4af37;
 }
 
 .info-box{
@@ -117,7 +167,7 @@ body{font-family:playfair display;background:#0b1a3a;color:#fff}
 }
 
 .box{
-  background:#ff2e88;
+  background:#d4af37;
   padding:25px;
   border-radius:12px;
   width:360px;
@@ -132,7 +182,7 @@ body{font-family:playfair display;background:#0b1a3a;color:#fff}
 
 .box i{
   font-size:30px;
-  color:#FFD700;
+  color:#0b0b0b;
   margin-bottom:10px;
 }
 
@@ -156,7 +206,7 @@ body{font-family:playfair display;background:#0b1a3a;color:#fff}
 }
 
 .form-box{
-  background:#07132b;
+  background:#0b0b0b;
   padding:30px;
   border-radius:12px;
   width:450px;
@@ -164,7 +214,7 @@ body{font-family:playfair display;background:#0b1a3a;color:#fff}
 }
 
 .form-box h2{
-  color:#FFD700;
+  color:#d4af37;
 }
 
 .form-box input,
@@ -181,12 +231,12 @@ body{font-family:playfair display;background:#0b1a3a;color:#fff}
 
 .form-box input:focus,
 .form-box textarea:focus{
-  border-color:#FFD700;
+  border-color:#d4af37;
   outline:none;
 }
 
 .form-box button{
-  background:#FFD700;
+  background:#d4af37;
   color:black;
   padding:12px;
   border:none;
@@ -217,7 +267,7 @@ body{font-family:playfair display;background:#0b1a3a;color:#fff}
   top:50%;
   left:50%;
   transform:translate(-50%,-50%);
-  background:#FFD700;
+  background:#d4af37;
   color:black;
   padding:20px;
   border-radius:50%;
@@ -227,7 +277,7 @@ body{font-family:playfair display;background:#0b1a3a;color:#fff}
 .con{
   margin:0;
   font-family: Arial, sans-serif;
-  background:#07132b;
+  background:#1a1a1a;
   color:white;
   display:flex;
   justify-content:center;
@@ -247,7 +297,7 @@ body{font-family:playfair display;background:#0b1a3a;color:#fff}
 }
 
 .contact-card h2{
-  color:#ffcc00;
+  color:#d4af37;
   margin-bottom:10px;
 }
 
@@ -265,7 +315,6 @@ body{font-family:playfair display;background:#0b1a3a;color:#fff}
 }
 
 .icon{
-  background:#ffcc00;
   color:#000;
   padding:10px;
   border-radius:50%;
@@ -274,17 +323,17 @@ body{font-family:playfair display;background:#0b1a3a;color:#fff}
 
 .info-box h4{
   margin:0;
-  color:#ffcc00;
+  color:#d4af37;
 }
 
 .info-box p{
   margin:5px 0;
-  color:#ddd;
+  color:#fff;
   font-size:14px;
 }
 
 .link{
-  color:#ffcc00;
+  color:#d4af37;
   text-decoration:none;
   font-weight:bold;
 }
@@ -319,7 +368,7 @@ body{font-family:playfair display;background:#0b1a3a;color:#fff}
 }
 
 .newsletter h2{
-  color:#FFD700;
+  color:#d4af37;
 }
 
 .newsletter-box{
@@ -337,7 +386,7 @@ body{font-family:playfair display;background:#0b1a3a;color:#fff}
   padding:12px 25px;
   border-radius:25px;
   border:none;
-  background:#FFD700;
+  background:#d4af37;
   color:black;
   margin-left:10px;
   font-weight:bold;
@@ -352,13 +401,13 @@ body{font-family:playfair display;background:#0b1a3a;color:#fff}
   }
 }
 /* Footer */
-footer{background:#07132b;padding:50px 0}
+footer{background::#0b0b0b;padding:50px 0}
 .footer-links a{display:block;color:#fff;text-decoration:none;margin-bottom:8px}
-.footer-links a:hover{color:#ffd60a}
+.footer-links a:hover{color:#d4af37}
 .social i{font-size:20px;margin-right:10px;color:#ff2e88}
 .copy{border-top:1px solid #222;margin-top:20px;padding-top:15px;text-align:center}
 
-.cursor-dot, .cursor-circle{
+.cursor-dot, {
 position: fixed;
 pointer-events: none;
 z-index: 9999;
@@ -372,43 +421,56 @@ background: #ffd60a;
 border-radius: 50%;
 }
 
-.cursor-circle{
-width: 35px;
-height: 35px;
-border: 2px solid #ff2e88;
-border-radius: 50%;
-transition: 0.15s ease-out;
-}
-
 </style>
 </head>
 
 <body>
+<!-- TOP HEADER START -->
+<div class="top-header">
+  <div class="container">
+    
+    <!-- LEFT -->
+    <div class="top-left">
+      <span>
+        <i class="fas fa-phone-alt"></i> +91 9876543210
+      </span>
+      <span>
+        <i class="fas fa-envelope"></i> support@yourwebsite.com
+      </span>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="top-right">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+
+  </div>
+</div>
+<!-- TOP HEADER END -->
 
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg">
 <div class="container">
-<a class="navbar-brand" href="#">Travel</a>
-<button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-<span class="navbar-toggler-icon"></span>
-</button>
+  <a href="index.html" class="navbar-brand"><img src="WhatsApp Image 2026-03-30 at 4.08.10 PM.jpeg" class="logo"></a>
 <div class="collapse navbar-collapse" id="nav">
 <ul class="navbar-nav ms-auto align-items-center">
 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
 <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
 <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
 <li class="nav-item"><a class="nav-link" href="activites.html">Activites</a></li>
-<li class="nav-item"><a class="nav-link" href="#">Membership</a></li>
+<li class="nav-item"><a class="nav-link" href="Membership.html">Membership</a></li>
 <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Hotels</a>
 <ul class="dropdown-menu">
 <li><a class="dropdown-item" href="domestic.html">Domestic</a></li>
 <li><a class="dropdown-item" href="international.html">International</a></li>
 </ul>
 </li>
-<li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+<li class="nav-item"><a class="nav-link" href="blogs.html">Blog</a></li>
 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-<li class="nav-item me-2"><button class="btn btn-outline-light">Login</button></li>
-<li class="nav-item"><button class="btn-nav">Book Now</button></li>
+<li class="nav-item"><button class="btn-nav">Login</button></li>
 </ul>
 </div>
 </div>
@@ -503,7 +565,7 @@ transition: 0.15s ease-out;
     <div class="icon">📞</div>
     <div>
       <h4>Phone</h4>
-      <p>10:30 AM - 6:00 PM (Sunday Off)</p>
+      <p>Monday-Saturday<br>11:00 AM - 6:00 PM (Sunday Off)</p>
       <a href="tel:18003097123" class="link">1800 309 7123</a>
     </div>
   </div>
@@ -583,46 +645,9 @@ transition: 0.15s ease-out;
 </div>
 </footer>
 <div class="cursor-dot"></div>
-<div class="cursor-circle"></div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </section>
 
-<script>
-const dot = document.querySelector('.cursor-dot');
-const circle = document.querySelector('.cursor-circle');
-
-let mouseX = 0, mouseY = 0;
-let circleX = 0, circleY = 0;
-
-document.addEventListener('mousemove', (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-
-  dot.style.left = mouseX + 'px';
-  dot.style.top = mouseY + 'px';
-});
-
-function animate() {
-  circleX += (mouseX - circleX) * 0.1;
-  circleY += (mouseY - circleY) * 0.1;
-
-  circle.style.left = circleX + 'px';
-  circle.style.top = circleY + 'px';
-
-  requestAnimationFrame(animate);
-}
-animate();
-
-// Hover effect
-document.querySelectorAll('a, button').forEach(el => {
-  el.addEventListener('mouseenter', () => {
-    circle.style.transform = 'translate(-50%, -50%) scale(1.5)';
-  });
-  el.addEventListener('mouseleave', () => {
-    circle.style.transform = 'translate(-50%, -50%) scale(1)';
-  });
-});
-</script>
 <div class="cursor-dot" id="cursorDot"></div>
 
 <script>

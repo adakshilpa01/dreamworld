@@ -9,20 +9,70 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <style>
-body{font-family:playfair display;background:#0b1a3a;color:#fff}
+body{font-family:'Poppins',sans-serif;background:#0b0b0b;color:#fff;margin:0;overflow-x: hidden;}
+.top-header {
+  background: #000; /* pure black */
+  color: #d4af37; /* gold text */
+  font-size: 14px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
 
+.top-header .container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LEFT */
+.top-left span {
+  margin-right: 25px;
+  color: #D4AF37;
+}
+
+.top-left i {
+  margin-right: 6px;
+  color: #d4af37; /* brighter gold for icons */
+}
+
+/* RIGHT ICONS */
+.top-right a {
+  color: #D4AF37;
+  margin-left: 15px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT 🔥 */
+.top-right a:hover {
+  color: #d4af37;
+  transform: translateY(-2px);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .top-header .container {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+}
 /* Navbar */
-.navbar{background:#07132b;padding:15px 0}
-.navbar-brand{font-weight:bold;font-size:24px;color:#ffd60a !important}
+.navbar{background:#000;padding:15px 0}
+.navbar-brand{font-weight:bold;font-size:24px;color:#d4af37 !important}
 .nav-link{color:#fff !important;margin:0 10px}
-.nav-link:hover{color:#ff2e88 !important}
-.btn-nav{background:#ff2e88;color:#fff;border:none;padding:8px 18px;border-radius:6px}
-.dropdown:hover .dropdown-menu {
-  display: block;
+.nav-link:hover{color:#D4AF37 !important}
+.btn-nav{background:#D4AF37;color:#0b0b0b;border:none;padding:8px 18px;border-radius:6px}
+.dropdown:hover .dropdown-menu {display: block;}
+.logo
+{
+  height: 50px;
 }
 /* Dropdown box */
 .dropdown-menu {
-  background: #0b1d3a;   /* dark blue */
+  background: #000;   /* dark blue */
   border-radius: 10px;
   padding: 10px 0;
   border: none;
@@ -41,7 +91,7 @@ body{font-family:playfair display;background:#0b1a3a;color:#fff}
 /* Hover effect */
 .dropdown-menu .dropdown-item:hover {
   background: transparent;
-  color: #ffd700;   /* yellow */
+  color: #d4af37;   /* yellow */
   transform: translateX(5px);
 }
 
@@ -62,7 +112,7 @@ body{font-family:playfair display;background:#0b1a3a;color:#fff}
   position: absolute;
   width: 100%;
   height: 2px;
-  background: #ffd700;  /* yellow */
+  background: #d4af37;  /* yellow */
   left: 0;
   bottom: -5px;
 }
@@ -112,7 +162,7 @@ body{font-family:playfair display;background:#0b1a3a;color:#fff}
 }
 
 .sidebar h3 {
-  color: #f5c518;
+  color: #d4af37;
 }
 
 .sidebar ul {
@@ -163,7 +213,7 @@ body{font-family:playfair display;background:#0b1a3a;color:#fff}
 }
 
 .details button {
-  background: #f5c518;
+  background: #d4af37;
   border: none;
   padding: 8px 15px;
   border-radius: 5px;
@@ -195,13 +245,13 @@ body{font-family:playfair display;background:#0b1a3a;color:#fff}
 }
 
 /* Footer */
-footer{background:#07132b;padding:50px 0}
+footer{background:#0b0b0b;padding:50px 0}
 .footer-links a{display:block;color:#fff;text-decoration:none;margin-bottom:8px}
 .footer-links a:hover{color:#ffd60a}
 .social i{font-size:20px;margin-right:10px;color:#ff2e88}
 .copy{border-top:1px solid #222;margin-top:20px;padding-top:15px;text-align:center}
 
-.cursor-dot, .cursor-circle{
+.cursor-dot{
 position: fixed;
 pointer-events: none;
 z-index: 9999;
@@ -215,43 +265,57 @@ background: #ffd60a;
 border-radius: 50%;
 }
 
-.cursor-circle{
-width: 35px;
-height: 35px;
-border: 2px solid #ff2e88;
-border-radius: 50%;
-transition: 0.15s ease-out;
-}
-
 </style>
 
 </head>
 <body>
 
-    <!-- NAVBAR -->
+ <!-- TOP HEADER START -->
+<div class="top-header">
+  <div class="container">
+    
+    <!-- LEFT -->
+    <div class="top-left">
+      <span>
+        <i class="fas fa-phone-alt"></i> +91 9876543210
+      </span>
+      <span>
+        <i class="fas fa-envelope"></i> support@yourwebsite.com
+      </span>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="top-right">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+
+  </div>
+</div>
+<!-- TOP HEADER END -->
+
+<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg">
 <div class="container">
-<a class="navbar-brand" href="#">Travel</a>
-<button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-<span class="navbar-toggler-icon"></span>
-</button>
+  <a href="index.html" class="navbar-brand"><img src="WhatsApp Image 2026-03-30 at 4.08.10 PM.jpeg" class="logo"></a>
 <div class="collapse navbar-collapse" id="nav">
 <ul class="navbar-nav ms-auto align-items-center">
 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
 <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
 <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
 <li class="nav-item"><a class="nav-link" href="activites.html">Activites</a></li>
-<li class="nav-item"><a class="nav-link" href="#">Membership</a></li>
+<li class="nav-item"><a class="nav-link" href="Membership.html">Membership</a></li>
 <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Hotels</a>
 <ul class="dropdown-menu">
 <li><a class="dropdown-item" href="domestic.html">Domestic</a></li>
 <li><a class="dropdown-item" href="international.html">International</a></li>
 </ul>
 </li>
-<li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+<li class="nav-item"><a class="nav-link" href="blogs.html">Blog</a></li>
 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-<li class="nav-item me-2"><button class="btn btn-outline-light">Login</button></li>
-<li class="nav-item"><button class="btn-nav">Book Now</button></li>
+<li class="nav-item"><button class="btn-nav">Login</button></li>
 </ul>
 </div>
 </div>
@@ -278,66 +342,291 @@ transition: 0.15s ease-out;
       <li onclick="filterHotels('bangkok')">Bangkok</li>
       <li onclick="filterHotels('Bhutan')">Bhutan</li>
       <li onclick="filterHotels('canary island')">Canary Island</li>
-      <li onclick="filterHotels('bihar')">Dubai</li>
-      <li onclick="filterHotels('chhattisgarh')">Georgia</li>
-      <li onclick="filterHotels('goa')">Indonesia</li>
-      <li onclick="filterHotels('gujarat')">Istanbul</li>
-      <li onclick="filterHotels('delhi')">Las vegas</li>
-      <li onclick="filterHotels('haryana')">London</li>
-      <li onclick="filterHotels('himachal pradesh')">Malaysia</li>
-      <li onclick="filterHotels('jharkhand')">Maldives</li>
-      <li onclick="filterHotels('karnataka')">Mauritius</li>
-      <li onclick="filterHotels('kerala')">Nepal</li>
-      <li onclick="filterHotels('madhya pradesh')">Paris</li>
-      <li onclick="filterHotels('maharastra')">Pattaya</li>
-      <li onclick="filterHotels('manipur')">Phuket</li>
-      <li onclick="filterHotels('meghalaya')">Rome</li>
-      <li onclick="filterHotels('mizoram')">Singapore</li>
-      <li onclick="filterHotels('nagaland')">Spain</li>
-      <li onclick="filterHotels('odisha')">Sri lanka</li>
-      <li onclick="filterHotels('punjab')">Switzerland</li>
-      <li onclick="filterHotels('rajasthan')">United states of America</li>
-      <li onclick="filterHotels('sikkim')">Vietnam</li>
+      <li onclick="filterHotels('dubai')">Dubai</li>
+      <li onclick="filterHotels('Georgia')">Georgia</li>
+      <li onclick="filterHotels('Indonesia')">Indonesia</li>
+      <li onclick="filterHotels('Istanbul')">Istanbul</li>
+      <li onclick="filterHotels('las vegas')">Las vegas</li>
+      <li onclick="filterHotels('london')">London</li>
+      <li onclick="filterHotels('malaysia')">Malaysia</li>
+      <li onclick="filterHotels('Maldives')">Maldives</li>
+      <li onclick="filterHotels('Mauritius')">Mauritius</li>
+      <li onclick="filterHotels('nepal')">Nepal</li>
+      <li onclick="filterHotels('paris')">Paris</li>
+      <li onclick="filterHotels('pattaya')">Pattaya</li>
+      <li onclick="filterHotels('Phuket')">Phuket</li>
+      <li onclick="filterHotels('Rome')">Rome</li>
+      <li onclick="filterHotels('Singapore')">Singapore</li>
+      <li onclick="filterHotels('Spain')">Spain</li>
+      <li onclick="filterHotels('sri lanka')">Sri lanka</li>
+      <li onclick="filterHotels('Switzerland')">Switzerland</li>
+      <li onclick="filterHotels('United states of America')">United states of America</li>
+      <li onclick="filterHotels('vietnam')">Vietnam</li>
     </ul>
   </div>
 
   <!-- HOTEL LIST -->
   <div class="hotel-list">
+  <!-- ================= LONDON ================= -->
+<div class="hotel-item" data-city="london">
+  <img src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba">
+  <div class="details">
+    <h2>Comfort Inn Hyde Park</h2>
+    <p>London</p>
+    <p>Comfort stay</p>
+    <button>View Details</button>
+  </div>
+</div>
 
-    <div class="hotel-item" data-city="jaipur">
-      <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945">
-      <div class="details">
-        <h2>Taj Lake Palace</h2>
-        <p>Udaipur / Jaipur</p>
-        <p>Luxury royal experience hotel</p>
-        <button>View Details</button>
-      </div>
-    </div>
+<div class="hotel-item" data-city="london">
+  <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa">
+  <div class="details">
+    <h2>Dorsett City, London</h2>
+    <p>London</p>
+    <p>Modern hotel</p>
+    <button>View Details</button>
+  </div>
+</div>
 
-    <div class="hotel-item" data-city="delhi">
-      <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b">
-      <div class="details">
-        <h2>The Oberoi</h2>
-        <p>New Delhi</p>
-        <p>Premium city hotel</p>
-        <button>View Details</button>
-      </div>
-    </div>
+<div class="hotel-item" data-city="london">
+  <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945">
+  <div class="details">
+    <h2>DoubleTree By Hilton Hotel London - Tower Of London</h2>
+    <p>London</p>
+    <p>Luxury stay</p>
+    <button>View Details</button>
+  </div>
+</div>
 
-    <div class="hotel-item" data-city="goa">
-      <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb">
-      <div class="details">
-        <h2>Goa Beach Resort</h2>
-        <p>Goa</p>
-        <p>Beachside luxury stay</p>
-        <button>View Details</button>
-      </div>
-    </div>
+<div class="hotel-item" data-city="london">
+  <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd">
+  <div class="details">
+    <h2>Premier Inn London Wembley Stadium Hotel</h2>
+    <p>London</p>
+    <p>Budget stay</p>
+    <button>View Details</button>
+  </div>
+</div>
 
+<div class="hotel-item" data-city="london">
+  <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7">
+  <div class="details">
+    <h2>Ramada By Wyndham London North M1</h2>
+    <p>London</p>
+    <p>Highway hotel</p>
+    <button>View Details</button>
+  </div>
+</div>
+
+<!-- ================= PARIS ================= -->
+<div class="hotel-item" data-city="paris">
+  <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34">
+  <div class="details">
+    <h2>Ibis Paris Tour Eiffel Cambronne 15eme</h2>
+    <p>Paris</p>
+    <p>City hotel</p>
+    <button>View Details</button>
+  </div>
+</div>
+
+<div class="hotel-item" data-city="paris">
+  <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa">
+  <div class="details">
+    <h2>Paris France Hotel</h2>
+    <p>Paris</p>
+    <p>Comfort stay</p>
+    <button>View Details</button>
+  </div>
+</div>
+
+<div class="hotel-item" data-city="paris">
+  <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945">
+  <div class="details">
+    <h2>Virgina Hotel - Paris</h2>
+    <p>Paris</p>
+    <p>Budget stay</p>
+    <button>View Details</button>
+  </div>
+</div>
+
+<!-- ================= MALAYSIA ================= -->
+<div class="hotel-item" data-city="malaysia">
+  <img src="https://images.unsplash.com/photo-1501117716987-c8e1ecb210d4">
+  <div class="details">
+    <h2>Berjaya Times Square Hotel, Kuala Lumpur</h2>
+    <p>Malaysia</p>
+    <p>Luxury hotel</p>
+    <button>View Details</button>
+  </div>
+</div>
+
+<div class="hotel-item" data-city="malaysia">
+  <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4">
+  <div class="details">
+    <h2>Dorsett Hartamas Kuala Lumpur</h2>
+    <p>Malaysia</p>
+    <p>Modern stay</p>
+    <button>View Details</button>
+  </div>
+</div>
+
+<div class="hotel-item" data-city="malaysia">
+  <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427">
+  <div class="details">
+    <h2>Hotel Transit Kuala Lumpur</h2>
+    <p>Malaysia</p>
+    <p>Budget stay</p>
+    <button>View Details</button>
+  </div>
+</div>
+
+<!-- ================= NEPAL ================= -->
+<div class="hotel-item" data-city="nepal">
+  <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b">
+  <div class="details">
+    <h2>Hotel Pleasure Home</h2>
+    <p>Nepal</p>
+    <p>Comfort stay</p>
+    <button>View Details</button>
+  </div>
+</div>
+
+<div class="hotel-item" data-city="nepal">
+  <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791">
+  <div class="details">
+    <h2>Hotel Pomela House Inn</h2>
+    <p>Nepal</p>
+    <p>Budget stay</p>
+    <button>View Details</button>
+  </div>
+</div>
+
+<div class="hotel-item" data-city="nepal">
+  <img src="https://images.unsplash.com/photo-1584132915807-fd1f5fbc078f">
+  <div class="details">
+    <h2>Vivanta Kathmandu</h2>
+    <p>Nepal</p>
+    <p>Luxury stay</p>
+    <button>View Details</button>
+  </div>
+</div>
+
+<!-- ================= MAURITIUS ================= -->
+<div class="hotel-item" data-city="mauritius">
+  <img src="https://images.unsplash.com/photo-1501117716987-c8e1ecb210d4">
+  <div class="details">
+    <h2>Esprit Libre Restaurant And Guest House</h2>
+    <p>Mauritius</p>
+    <p>Guest house stay</p>
+    <button>View Details</button>
+  </div>
+</div>
+
+<div class="hotel-item" data-city="mauritius">
+  <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4">
+  <div class="details">
+    <h2>Holiday Inn Mauritius Mon Tresor</h2>
+    <p>Mauritius</p>
+    <p>Comfort hotel</p>
+    <button>View Details</button>
+  </div>
+</div>
+
+<!-- ================= PATTAYA ================= -->
+<div class="hotel-item" data-city="pattaya">
+  <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd">
+  <div class="details">
+    <h2>A-One Pattaya Beach Resort</h2>
+    <p>Pattaya</p>
+    <p>Beach resort</p>
+    <button>View Details</button>
+  </div>
+</div>
+
+<div class="hotel-item" data-city="pattaya">
+  <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7">
+  <div class="details">
+    <h2>Beston Pattaya Hotel</h2>
+    <p>Pattaya</p>
+    <p>Budget stay</p>
+    <button>View Details</button>
+  </div>
+</div>
+
+<div class="hotel-item" data-city="pattaya">
+  <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6">
+  <div class="details">
+    <h2>Centara Pattaya Hotel</h2>
+    <p>Pattaya</p>
+    <p>Luxury stay</p>
+    <button>View Details</button>
+  </div>
+</div>
+
+<!-- ================= USA ================= -->
+<div class="hotel-item" data-city="usa">
+  <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945">
+  <div class="details">
+    <h2>Extended Stay America - Houston - Med. Ctr. - Greenway Plaza</h2>
+    <p>USA</p>
+    <p>Long stay hotel</p>
+    <button>View Details</button>
+  </div>
+</div>
+
+<div class="hotel-item" data-city="usa">
+  <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa">
+  <div class="details">
+    <h2>Radisson Blu Mall Of America</h2>
+    <p>USA</p>
+    <p>Premium hotel</p>
+    <button>View Details</button>
+  </div>
+</div>
+
+<div class="hotel-item" data-city="usa">
+  <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b">
+  <div class="details">
+    <h2>Villa Florence Hotel</h2>
+    <p>USA</p>
+    <p>Luxury stay</p>
+    <button>View Details</button>
+  </div>
+</div>
+
+<!-- ================= VIETNAM ================= -->
+<div class="hotel-item" data-city="vietnam">
+  <img src="https://images.unsplash.com/photo-1501117716987-c8e1ecb210d4">
+  <div class="details">
+    <h2>Adora Art Hotel</h2>
+    <p>Vietnam</p>
+    <p>City hotel</p>
+    <button>View Details</button>
+  </div>
+</div>
+
+<div class="hotel-item" data-city="vietnam">
+  <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4">
+  <div class="details">
+    <h2>Hilton Da Nang</h2>
+    <p>Vietnam</p>
+    <p>Luxury hotel</p>
+    <button>View Details</button>
+  </div>
+</div>
+
+<div class="hotel-item" data-city="vietnam">
+  <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427">
+  <div class="details">
+    <h2>V Hotel Nha Trang</h2>
+    <p>Vietnam</p>
+    <p>Beach stay</p>
+    <button>View Details</button>
+  </div>
+</div>
   </div>
 
 </section>
-
 <!-- FOOTER -->
 <footer>
 <div class="container">
@@ -375,9 +664,7 @@ transition: 0.15s ease-out;
 <p>Phone: +91 9876543210</p>
 <p>Location: India</p>
 </div>
-
 </div>
-
 <div class="copy">
 <p>© 2026 Travel Agency | All Rights Reserved</p>
 </div>
@@ -385,9 +672,9 @@ transition: 0.15s ease-out;
 </div>
 </footer>
 <div class="cursor-dot"></div>
-<div class="cursor-circle"></div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </section>
+
 <script>
 function filterHotels(city) {
   const hotels = document.querySelectorAll(".hotel-item");
@@ -405,7 +692,6 @@ function filterHotels(city) {
   });
 }
 </script>
-
 </script>
 <div class="cursor-dot" id="cursorDot"></div>
 
@@ -416,6 +702,7 @@ document.addEventListener('mousemove', (e) => {
   dot.style.top = e.clientY + 'px';
 });
 </script>
+
 
 </body>
 </html>
