@@ -126,7 +126,7 @@ body{font-family:'Poppins',sans-serif;background:#0b0b0b;color:#fff;margin:0;ove
 /* BANNER */
 .india-banner {
   height: 300px;
-  background: url('bali.jpg') center/cover;
+  background: url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da') center/cover;
 }
 
 .banner-overlay {
@@ -149,7 +149,8 @@ body{font-family:'Poppins',sans-serif;background:#0b0b0b;color:#fff;margin:0;ove
 .india-page {
   display: flex;
   padding: 40px;
-  gap: 30px;
+  gap: 10px;
+  height: 100vh;
 }
 
 /* SIDEBAR */
@@ -159,6 +160,10 @@ body{font-family:'Poppins',sans-serif;background:#0b0b0b;color:#fff;margin:0;ove
   padding: 20px;
   border-radius: 10px;
   color: #fff;
+  position: sticky;
+  top: 0;
+  height: calc(100vh-60px);
+  overflow-y: auto;
 }
 
 .sidebar h3 {
@@ -174,10 +179,31 @@ body{font-family:'Poppins',sans-serif;background:#0b0b0b;color:#fff;margin:0;ove
   margin: 10px 0;
   cursor: pointer;
 }
+/* Sidebar destination hover */
+.sidebar ul li {
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
+/* Hover pe button look */
+.sidebar ul li:hover {
+  background-color: #d4af37;
+  color: #000;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+  transform: translateX(5px);
+}
+.sidebar ul li.active {
+  background-color: #d4af37;
+  color: #000;
+}
 /* HOTEL LIST */
 .hotel-list {
   flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  height: calc(100vh-60px);
 }
 
 .hotel-item {
@@ -243,8 +269,6 @@ body{font-family:'Poppins',sans-serif;background:#0b0b0b;color:#fff;margin:0;ove
     width: 100%;
   }
 }
-
-
 /* Footer */
 footer{background:#0b0b0b;padding:50px 0}
 .footer-links a{display:block;color:#fff;text-decoration:none;margin-bottom:8px}
@@ -337,43 +361,76 @@ border-radius: 50%;
     <h3>Destinations</h3>
     <ul>
       <li onclick="filterHotels('all')">All</li>
-      <li onclick="filterHotels('ladakh')">Ladakh</li>
-      <li onclick="filterHotels('andra pradesh')">Andhra Pradesh</li>
-      <li onclick="filterHotels('arunachal pradesh')">Arunachal Pradesh</li>
-      <li onclick="filterHotels('assam')">Assam</li>
-      <li onclick="filterHotels('bihar')">Bihar</li>
-      <li onclick="filterHotels('chhattisgarh')">Chhattisgarh</li>
-      <li onclick="filterHotels('goa')">Goa</li>
-      <li onclick="filterHotels('gujarat')">Gujarat</li>
-      <li onclick="filterHotels('delhi')">Delhi</li>
-      <li onclick="filterHotels('haryana')">Haryana</li>
-      <li onclick="filterHotels('himachal pradesh')">Himachal Pradesh</li>
-      <li onclick="filterHotels('jharkhand')">Jharkhand</li>
-      <li onclick="filterHotels('karnataka')">Karnataka</li>
-      <li onclick="filterHotels('kerala')">Kerala</li>
-      <li onclick="filterHotels('madhya pradesh')">Madhya Pradesh</li>
-      <li onclick="filterHotels('maharastra')">Maharashtra</li>
-      <li onclick="filterHotels('manipur')">Manipur</li>
-      <li onclick="filterHotels('meghalaya')">Meghalaya</li>
-      <li onclick="filterHotels('mizoram')">Mizoram</li>
-      <li onclick="filterHotels('nagaland')">Nagaland</li>
-      <li onclick="filterHotels('odisha')">Odisha</li>
-      <li onclick="filterHotels('punjab')">Punjab</li>
-      <li onclick="filterHotels('rajasthan')">Rajasthan</li>
-      <li onclick="filterHotels('sikkim')">Sikkim</li>
-      <li onclick="filterHotels('tamil nadu')">Tamil Nadu</li>
-      <li onclick="filterHotels('telangana')">Telangana</li>
-      <li onclick="filterHotels('tripura')">Tripura</li>
-      <li onclick="filterHotels('uttar pradesh')">Uttar Pradesh</li>
-      <li onclick="filterHotels('uttarakhand')">Uttarakhand</li>
-      <li onclick="filterHotels('west bengal')">West Bengal</li>
-    </ul>
-  </div>
+      <li onclick="filterHotels('Agra')">Agra</li>
+    <li onclick="filterHotels('Ajmer')">Ajmer</li>
+<li onclick="filterHotels('Alleppey')">Alleppey</li>
+<li onclick="filterHotels('Amritsar')">Amritsar</li>
+<li onclick="filterHotels('Andaman And Nicobar')">Andaman And Nicobar</li>
+<li onclick="filterHotels('Aurangabad')">Aurangabad</li>
+<li onclick="filterHotels('Benguluru')">Benguluru</li>
+<li onclick="filterHotels('Bhimtal')">Bhimtal</li>
+<li onclick="filterHotels('Bhirandiara')">Bhirandiara</li>
+<li onclick="filterHotels('Bhopal')">Bhopal</li>
+<li onclick="filterHotels('Chandigarh')">Chandigarh</li>
+<li onclick="filterHotels('Cochin')">Cochin</li>
+<li onclick="filterHotels('Dehradun')">Dehradun</li>
+<li onclick="filterHotels('Delhi')">Delhi</li>
+<li onclick="filterHotels('Delhi Ncr')">Delhi NCR</li>
+<li onclick="filterHotels('Dharmshala')">Dharmshala</li>
+<li onclick="filterHotels('Gangtok')">Gangtok</li>
+<li onclick="filterHotels('Gaya')">Gaya</li>
+<li onclick="filterHotels('Goa')">Goa</li>
+<li onclick="filterHotels('Gwalior')">Gwalior</li>
+<li onclick="filterHotels('Haridwar')">Haridwar</li>
+<li onclick="filterHotels('Hyderabad')">Hyderabad</li>
+<li onclick="filterHotels('Jaipur')">Jaipur</li>
+<li onclick="filterHotels('Jaisalmer')">Jaisalmer</li>
+<li onclick="filterHotels('Jim Corbett')">Jim Corbett</li>
+<li onclick="filterHotels('Jodhpur')">Jodhpur</li>
+<li onclick="filterHotels('Katra')">Katra</li>
+<li onclick="filterHotels('Kerala')">Kerala</li>
+<li onclick="filterHotels('Kodaikanal')">Kodaikanal</li>
+<li onclick="filterHotels('Kolkata')">Kolkata</li>
+<li onclick="filterHotels('Kosi')">Kosi</li>
+<li onclick="filterHotels('Kumrakon')">Kumrakon</li>
+<li onclick="filterHotels('Ladakh')">Ladakh</li>
+<li onclick="filterHotels('Manali')">Manali</li>
+<li onclick="filterHotels('Manesar')">Manesar</li>
+<li onclick="filterHotels('Mathura')">Mathura</li>
+<li onclick="filterHotels('Meghalaya')">Meghalaya</li>
+<li onclick="filterHotels('Mumbai')">Mumbai</li>
+<li onclick="filterHotels('Munnar')">Munnar</li>
+<li onclick="filterHotels('Mansoori')">Mansoori</li>
+<li onclick="filterHotels('Mysore')">Mysore</li>
+<li onclick="filterHotels('Nagpur')">Nagpur</li>
+<li onclick="filterHotels('Nainital')">Nainital</li>
+<li onclick="filterHotels('Ooty')">Ooty</li>
+<li onclick="filterHotels('Panchgani')">Panchgani</li>
+<li onclick="filterHotels('Pune')">Pune</li>
+<li onclick="filterHotels('Puri')">Puri</li>
+<li onclick="filterHotels('Pushkar')">Pushkar</li>
+<li onclick="filterHotels('Ranthambore')">Ranthambore</li>
+<li onclick="filterHotels('Rishikesh')">Rishikesh</li>
+<li onclick="filterHotels('Shimla')">Shimla</li>
+<li onclick="filterHotels('Shirdi')">Shirdi</li>
+<li onclick="filterHotels('Srinagar')">Srinagar</li>
+<li onclick="filterHotels('Surat')">Surat</li>
+<li onclick="filterHotels('Udaipur')">Udaipur</li>
+<li onclick="filterHotels('Visakhapatnam')">Visakhapatnam</li>
 
-  <!-- HOTEL LIST -->
+  </ul>
+  </div>
+<!-- HOTEL LIST -->
   <div class="hotel-list">
      <!-- ================= AGRA ================= -->
-<div class="hotel-item" data-city="agra"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"><div class="details"><h2>AARAM BAGH AGRA</h2><p>Agra</p><p>Hotel stay</p><button>View Details</button></div></div>
+<div class="hotel-item" data-city="agra">
+  <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945">
+  <div class="details"><h2>AARAM BAGH AGRA</h2>
+    <p>Agra</p>
+    <p>Hotel stay</p>
+    <button>View Details</button>
+  </div>
+</div>
 <div class="hotel-item" data-city="agra"><img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa"><div class="details"><h2>CRYSTAL SAROVAR PORTICO - Agra</h2><p>Agra</p><p>Hotel stay</p><button>View Details</button></div></div>
 <div class="hotel-item" data-city="agra"><img src="https://images.unsplash.com/photo-1582719508461-905c673771fd"><div class="details"><h2>Hotel Clarks Shiraz</h2><p>Agra</p><p>Hotel stay</p><button>View Details</button></div></div>
 <div class="hotel-item" data-city="agra"><img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7"><div class="details"><h2>Hotel Taj Resorts</h2><p>Agra</p><p>Hotel stay</p><button>View Details</button></div></div>
@@ -427,7 +484,79 @@ border-radius: 50%;
 
 <!-- ================= HYDERABAD ================= -->
 <div class="hotel-item" data-city="hyderabad"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"><div class="details"><h2>Hyderabad Marriott</h2><p>Hyderabad</p><p>Luxury stay</p><button>View Details</button></div></div>
+<!-- ================= MANESAR ================= -->
+<div class="hotel-item" data-city="manesar"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"><div class="details"><h2>Fortune Park Orange</h2><p>Manesar</p><p>Hotel stay</p><button>View Details</button></div></div>
+<div class="hotel-item" data-city="manesar"><img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa"><div class="details"><h2>Holiday Inn Gurugram Sector 90</h2><p>Manesar</p><p>Hotel stay</p><button>View Details</button></div></div>
+<div class="hotel-item" data-city="manesar"><img src="https://images.unsplash.com/photo-1582719508461-905c673771fd"><div class="details"><h2>Hyatt Regency Gurgaon</h2><p>Manesar</p><p>Luxury stay</p><button>View Details</button></div></div>
+<div class="hotel-item" data-city="manesar"><img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7"><div class="details"><h2>Savoy Suites</h2><p>Manesar</p><p>Hotel stay</p><button>View Details</button></div></div>
 
+<!-- ================= MATHURA ================= -->
+<div class="hotel-item" data-city="mathura"><img src="https://images.unsplash.com/photo-1590490360182-c33d57733427"><div class="details"><h2>Brijwasi Centrum</h2><p>Mathura</p><p>Hotel stay</p><button>View Details</button></div></div>
+<div class="hotel-item" data-city="mathura"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"><div class="details"><h2>Brijwasi Land Inn</h2><p>Mathura</p><p>Hotel stay</p><button>View Details</button></div></div>
+<div class="hotel-item" data-city="mathura"><img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa"><div class="details"><h2>The Lalita Grand</h2><p>Mathura</p><p>Hotel stay</p><button>View Details</button></div></div>
+<div class="hotel-item" data-city="mathura"><img src="https://images.unsplash.com/photo-1582719508461-905c673771fd"><div class="details"><h2>Wingston A Treehouse Hotel</h2><p>Mathura</p><p>Hotel stay</p><button>View Details</button></div></div>
+
+<!-- ================= MUMBAI ================= -->
+<div class="hotel-item" data-city="mumbai"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b"><div class="details"><h2>ITC Grand Central</h2><p>Mumbai</p><p>Luxury stay</p><button>View Details</button></div></div>
+<div class="hotel-item" data-city="mumbai"><img src="https://images.unsplash.com/photo-1501117716987-c8e1ecb210d4"><div class="details"><h2>Radisson Blu Mumbai International Airport</h2><p>Mumbai</p><p>Hotel stay</p><button>View Details</button></div></div>
+<div class="hotel-item" data-city="mumbai"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4"><div class="details"><h2>Ramada Plaza Palm Grove</h2><p>Mumbai</p><p>Hotel stay</p><button>View Details</button></div></div>
+<div class="hotel-item" data-city="mumbai"><img src="https://images.unsplash.com/photo-1590490360182-c33d57733427"><div class="details"><h2>Royal Orchid Central Grazia</h2><p>Mumbai</p><p>Hotel stay</p><button>View Details</button></div></div>
+
+<!-- ================= MUNNAR ================= -->
+<div class="hotel-item" data-city="munnar"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"><div class="details"><h2>Blanket Hotel & Spa</h2><p>Munnar</p><p>Luxury stay</p><button>View Details</button></div></div>
+<div class="hotel-item" data-city="munnar"><img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa"><div class="details"><h2>Elixir Hills Resort</h2><p>Munnar</p><p>Resort stay</p><button>View Details</button></div></div>
+<div class="hotel-item" data-city="munnar"><img src="https://images.unsplash.com/photo-1582719508461-905c673771fd"><div class="details"><h2>Maxi Munnar T&U Leisure Hotel</h2><p>Munnar</p><p>Hotel stay</p><button>View Details</button></div></div>
+<div class="hotel-item" data-city="munnar"><img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7"><div class="details"><h2>Pleasant Hill Resort</h2><p>Munnar</p><p>Resort stay</p><button>View Details</button></div></div>
+<div class="hotel-item" data-city="munnar"><img src="https://images.unsplash.com/photo-1590490360182-c33d57733427"><div class="details"><h2>The Munnar Queen Resort</h2><p>Munnar</p><p>Resort stay</p><button>View Details</button></div></div>
+
+<!-- ================= MUSSOORIE ================= -->
+<div class="hotel-item" data-city="mussoorie"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"><div class="details"><h2>Fortune Resort Grace</h2><p>Mussoorie</p><p>Luxury stay</p><button>View Details</button></div></div>
+<div class="hotel-item" data-city="mussoorie"><img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa"><div class="details"><h2>Honeymoon Inn</h2><p>Mussoorie</p><p>Hotel stay</p><button>View Details</button></div></div>
+
+<!-- ================= MYSORE ================= -->
+<div class="hotel-item" data-city="mysore"><img src="https://images.unsplash.com/photo-1590490360182-c33d57733427"><div class="details"><h2>Country Inn & Suites</h2><p>Mysore</p><p>Hotel stay</p><button>View Details</button></div></div>
+
+<!-- ================= NAGPUR ================= -->
+<div class="hotel-item" data-city="nagpur"><img src="https://images.unsplash.com/photo-1582719508461-905c673771fd"><div class="details"><h2>Radisson Blu Nagpur</h2><p>Nagpur</p><p>Luxury stay</p><button>View Details</button></div></div>
+
+<!-- ================= NAINITAL ================= -->
+<div class="hotel-item" data-city="nainital"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"><div class="details"><h2>Langdale Manor</h2><p>Nainital</p><p>Hotel stay</p><button>View Details</button></div></div>
+
+<!-- ================= OOTY ================= -->
+<div class="hotel-item" data-city="ooty"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b"><div class="details"><h2>Club Mahindra Ooty</h2><p>Ooty</p><p>Resort stay</p><button>View Details</button></div></div>
+
+<!-- ================= PANCHGANI ================= -->
+<div class="hotel-item" data-city="panchagani"><img src="https://images.unsplash.com/photo-1590490360182-c33d57733427"><div class="details"><h2>Blue Country Resort</h2><p>Panchgani</p><p>Resort stay</p><button>View Details</button></div></div>
+
+<!-- ================= PUNE ================= -->
+<div class="hotel-item" data-city="pune"><img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7"><div class="details"><h2>Hyatt Pune</h2><p>Pune</p><p>Luxury stay</p><button>View Details</button></div></div>
+
+<!-- ================= PURI ================= -->
+<div class="hotel-item" data-city="puri"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"><div class="details"><h2>Hotel Holiday Resort</h2><p>Puri</p><p>Hotel stay</p><button>View Details</button></div></div>
+
+<!-- ================= PUSHKAR ================= -->
+<div class="hotel-item" data-city="pushkar"><img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7"><div class="details"><h2>Ananta Spa & Resort</h2><p>Pushkar</p><p>Luxury stay</p><button>View Details</button></div></div>
+
+<!-- ================= RANTHAMBORE ================= -->
+<div class="hotel-item" data-city="ranthambore"><img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa"><div class="details"><h2>Clarks Safari</h2><p>Ranthambore</p><p>Resort stay</p><button>View Details</button></div></div>
+
+<!-- ================= RISHIKESH ================= -->
+<div class="hotel-item" data-city="rishikesh"><img src="https://images.unsplash.com/photo-1590490360182-c33d57733427"><div class="details"><h2>Grand Shiva Resort</h2><p>Rishikesh</p><p>Resort stay</p><button>View Details</button></div></div>
+
+<!-- ================= SHIMLA ================= -->
+<div class="hotel-item" data-city="shimla"><img src="https://images.unsplash.com/photo-1582719508461-905c673771fd"><div class="details"><h2>Radisson Jass Shimla</h2><p>Shimla</p><p>Luxury stay</p><button>View Details</button></div></div>
+
+<!-- ================= SHIRDI ================= -->
+<div class="hotel-item" data-city="shirdi"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"><div class="details"><h2>Daiwik Hotel</h2><p>Shirdi</p><p>Hotel stay</p><button>View Details</button></div></div>
+
+<!-- ================= SURAT ================= -->
+<div class="hotel-item" data-city="surat"><img src="https://images.unsplash.com/photo-1582719508461-905c673771fd"><div class="details"><h2>Courtyard by Marriott</h2><p>Surat</p><p>Luxury stay</p><button>View Details</button></div></div>
+
+<!-- ================= UDAIPUR ================= -->
+<div class="hotel-item" data-city="udaipur"><img src="https://images.unsplash.com/photo-1590490360182-c33d57733427"><div class="details"><h2>Aaram Mahal</h2><p>Udaipur</p><p>Luxury stay</p><button>View Details</button></div></div>
+
+<!-- ================= VISAKHAPATNAM ================= -->
+<div class="hotel-item" data-city="visakhapatnam"><img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa"><div class="details"><h2>Novotel Visakhapatnam</h2><p>Visakhapatnam</p><p>Luxury stay</p><button>View Details</button></div></div>
     
 </div>
 </section>
@@ -479,25 +608,15 @@ border-radius: 50%;
 <div class="cursor-dot"></div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </section>
-
 <script>
-function filterHotels(city) {
-  const hotels = document.querySelectorAll(".hotel-item");
+  const items = document.querySelectorAll(".sidebar ul li");
 
-  hotels.forEach(hotel => {
-    if (city === "all") {
-      hotel.style.display = "flex";
-    } else {
-      if (hotel.getAttribute("data-city") === city) {
-        hotel.style.display = "flex";
-      } else {
-        hotel.style.display = "none";
-      }
-    }
+items.forEach(item => {
+  item.addEventListener("click", function () {
+    items.forEach(i => i.classList.remove("active"));
+    this.classList.add("active");
   });
-}
-</script>
-
+});
 </script>
 <div class="cursor-dot" id="cursorDot"></div>
 

@@ -65,7 +65,6 @@ body{font-family:'Poppins',sans-serif;background:#0b0b0b;color:#fff;margin:0;ove
 .navbar{background:#000;padding:15px 0}
 .navbar-brand{font-weight:bold;font-size:24px;color:#d4af37 !important}
 .nav-link{color:#fff !important;margin:0 10px}
-.nav-link:hover{color:#D4AF37 !important}
 .btn-nav{background:#D4AF37;color:#0b0b0b;border:none;padding:8px 18px;border-radius:6px}
 .dropdown:hover .dropdown-menu {display: block;}
 .logo
@@ -102,23 +101,24 @@ body{font-family:'Poppins',sans-serif;background:#0b0b0b;color:#fff;margin:0;ove
   display: block;
 }
 
-/* Navbar link */
 .nav-link {
-  position: relative;
-  color: white;
+  color: white !important;
+  padding: 8px 16px;
+  border-radius: 25px;
+  transition: 0.3s;
 }
 
-/* Yellow underline on hover */
-.nav-link:hover::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background: #d4af37;  /* yellow */
-  left: 0;
-  bottom: -5px;
+/* Hover */
+.nav-link:hover {
+  background: gold;
+  color: black !important;
 }
 
+/* Active (clicked) */
+.nav-link.active {
+  background: gold;
+  color: black !important;
+}
 /* Hero */
 .hero{height:90vh;background:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center}
 .hero h1{font-size:60px;font-weight:bold}
@@ -133,7 +133,7 @@ body{font-family:'Poppins',sans-serif;background:#0b0b0b;color:#fff;margin:0;ove
   background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
   url('https://images.unsplash.com/photo-1501785888041-af3ef285b470');
   background-size:cover;
-  height:300px;
+  height:500px;
   text-align:center;
   padding-top:100px;
 }
@@ -177,32 +177,6 @@ body{font-family:'Poppins',sans-serif;background:#0b0b0b;color:#fff;margin:0;ove
 .about-images img:hover {
   transform: scale(1.05);
 }
-
-/* POSITIONING (OVERLAP MAGIC) */
-.img1 {
-  width: 260px;
-  height: 320px;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-.img2 {
-  width: 240px;
-  height: 260px;
-  top: 100px;
-  left: 220px;
-  z-index: 2;
-}
-
-.img3 {
-  width: 300px;
-  height: 200px;
-  bottom: 0;
-  left: 80px;
-  z-index: 0;
-}
-
 /* CONTENT */
 .about-content {
   width: 45%;
@@ -210,7 +184,7 @@ body{font-family:'Poppins',sans-serif;background:#0b0b0b;color:#fff;margin:0;ove
 
 .about-content h2 {
   font-size: 36px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 .about-content p {
@@ -272,7 +246,64 @@ body{font-family:'Poppins',sans-serif;background:#0b0b0b;color:#fff;margin:0;ove
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),
   url('https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b') no-repeat center/cover;
 }
+.about1-section {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 80px 10%;
+}
 
+.about1-container {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+/* LEFT SIDE GRID */
+.about1-images {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 15px;
+  width: 450px;
+}
+
+.about1-images .img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+/* BIG IMAGE */
+.about1-images .big {
+  grid-row: span 2;
+}
+
+/* HOVER EFFECT */
+.about1-images .img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px gold;
+}
+
+/* RIGHT SIDE */
+.about1-content {
+  flex: 1;
+}
+
+.about1-content h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: gold;
+}
+
+.about1-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  color: #ccc;
+}
 /* CTA CONTAINER */
 .cta-container{
   position: relative;
@@ -568,45 +599,23 @@ border-radius: 50%;
   <h1>About Us</h1>
   <p>Home → About Us</p>
 </section>
-
-  <section class="about-section">
-  <div class="about-container">
-
-    <!-- IMAGES -->
-    <div class="about-images">
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" class="img1">
-      <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff" class="img2">
-      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" class="img3">
-    </div>
-
-    <!-- CONTENT -->
-    <div class="about-content">
-      <h2>We are world reputed travel agency</h2>
-
-      <p>
-        We provide premium travel experiences with top destinations,
-        safety assurance and expert guides.
-      </p>
-
-      <ul>
-        <li>✔ Exclusive Trips</li>
-        <li>✔ Safety First Always</li>
-        <li>✔ Professional Guide</li>
-      </ul>
-
-      <a href="#" class="btn">Contact With Us →</a>
-    </div>
-
-  </div>
-</section>
-
-
+  
 <!-- ABOUT -->
 <section class="section container" data-aos="fade-up">
 <div class="row align-items-center">
 <div class="col-md-6 about-text">
 <h1>About Dreamworld Vacations</h1>
-<p>Dreamworld Vacations is your trusted travel partner offering premium tours and unforgettable experiences worldwide.Dreamworld vacations India pvt ltd offers an extensive range of hotels and resorts located in popular destinations around the world. We have the perfect place for you and your family to enjoy your holidays to its fullest and collect memories for life.</p>
+<p>We are more than a travel company—we are curators of exceptional lifestyles.
+
+At Dreamworld Vacations, we redefine the way the world experiences travel by offering exclusive, thoughtfully designed vacations that go beyond ordinary getaways. Our focus is not just on where you go, but how you feel when you arrive.
+
+With a commitment to elegance, comfort, and personalized service, we provide access to some of the world’s most sought-after destinations through premium timeshare experiences. Every journey we craft is tailored to reflect your aspirations, your pace, and your definition of luxury.
+
+We believe that true luxury lies in consistency—the ability to enjoy world-class holidays, year after year, without compromise. That’s why our model is built around long-term value, offering you not just trips, but a lifetime of unforgettable experiences.
+
+From serene beach retreats to iconic global destinations, we ensure every moment is seamless, refined, and extraordinary.
+
+Because for us, travel isn’t a service—it’s a signature experience.</p>
 <p>We focus on comfort, adventure, and value in every journey.</p>
 </div>
 <div class="col-md-6">
@@ -614,7 +623,71 @@ border-radius: 50%;
 </div>
 </div>
 </section>
+<section class="about1-section">
 
+  <div class="about1-container">
+
+    <!-- LEFT IMAGES -->
+    <div class="about1-images">
+      <img src="23.jpg" class="img big">
+      <img src="24.jpg" class="img small">
+      <img src="25.jpg" class="img small">
+      <img src="26.jpg" class="img small">
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="about1-content">
+      <h2>Why Us</h2>
+
+      <p>
+        ✨ Because You Don’t Settle for Ordinary
+
+We serve a select clientele who expect more than just vacations—they expect perfection, consistency, and exclusivity.</p>
+
+<p>🌍 Private Access to World-Class Destinations
+
+Gain entry to a curated portfolio of luxury resorts and experiences that aren’t available to the mass market.</p>
+
+<p>🥂 A Lifestyle Investment, Not an Expense
+
+Our timeshare model transforms your holidays into a long-term luxury asset, protecting you from rising travel costs while elevating your lifestyle.</p>
+
+<p>🤝 Dedicated Relationship Manager
+
+No call centers. No generic responses.
+You get a personal travel advisor who understands your preferences and handles everything seamlessly.</p>
+
+<p>🏝️ Guaranteed Premium Standards
+
+Every stay meets strict quality benchmarks—so whether it’s Bali, Dubai, or Switzerland, your experience remains consistently exceptional.</p>
+
+<p>⏳ Priority Booking & Peak Season Access
+
+Travel when you want—not when availability allows.
+Enjoy priority reservations, even during high-demand seasons.</p>
+
+<p>🛡️ 100% Transparency & Trust
+
+Clear terms, no hidden surprises.
+What we promise is exactly what you experience—every single time.</p>
+
+<p>💼 Tailored for High-Net-Worth Individuals
+
+Our services are crafted for those who value:</p>
+<p>
+Privacy
+Comfort
+Time efficiency
+Elite experiences
+🔥 Effortless Luxury, Year After Year</p>
+
+<p>Just seamless, refined holidays—on repeat.
+      </p>
+    </div>
+
+  </div>
+
+</section>
 <!-- COUNTERS -->
 <section class="section container text-center" data-aos="zoom-in">
 <div class="row">
@@ -623,21 +696,6 @@ border-radius: 50%;
 <div class="col-md-4 counter"><h1 class="count" data-target="50">0</h1><p>Destinations</p></div>
 </div>
 </section>
-
-<!-- HERO SECTION -->
-<section class="hero-section"></section>
-
-<!-- CTA -->
-<div class="cta-container">
-  <div class="cta-box">
-    <div class="cta-text">
-      <h2>Lets Get Started with Us.</h2>
-      <p>Call Us Now!</p>
-    </div>
-
-    <a href="#" class="cta-btn">Book Now →</a>
-  </div>
-</div>
 <!-- VISION & MISSION -->
 <section class="section container" data-aos="fade-up">
 <div class="row g-4">
@@ -657,6 +715,20 @@ border-radius: 50%;
 </div>
 </div>
 </section>
+
+<!-- HERO SECTION -->
+<section class="hero-section"></section>
+<!-- CTA -->
+<div class="cta-container">
+  <div class="cta-box">
+    <div class="cta-text">
+      <h2>Lets Get Started with Us.</h2>
+      <p>Call Us Now!</p>
+    </div>
+
+    <a href="#" class="cta-btn">Book Now →</a>
+  </div>
+</div>
 
 <section class="testimonial">
 
@@ -902,7 +974,20 @@ border-radius: 50%;
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  const links = document.querySelectorAll(".nav-link");
 
+  links.forEach(link => {
+    link.addEventListener("click", function() {
+      
+      // sab se active class hatao
+      links.forEach(l => l.classList.remove("active"));
+      
+      // jispe click hua usko add karo
+      this.classList.add("active");
+    });
+  });
+</script>
 <script>
 AOS.init();
 

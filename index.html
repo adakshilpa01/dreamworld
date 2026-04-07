@@ -104,26 +104,28 @@ body{font-family:'Poppins',sans-serif;background:#0b0b0b;color:#fff;margin:0;ove
   display: block;
 }
 
-/* Navbar link */
+
 .nav-link {
-  position: relative;
-  color: white;
+  color: white !important;
+  padding: 8px 16px;
+  border-radius: 25px;
+  transition: 0.3s;
 }
 
-/* Yellow underline on hover */
-.nav-link:hover::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background: #d4af37;  /* yellow */
-  left: 0;
-  bottom: -5px;
+/* Hover */
+.nav-link:hover {
+  background: #d4af37;
+  color: black !important;
 }
 
+/* Active (clicked) */
+.nav-link.active {
+  background: #d4af37;
+  color: black !important;
+}
 .main-slider{
   position:relative;
-  height:90vh;
+  height:80vh;
   overflow:hidden;
 }
 
@@ -160,10 +162,18 @@ body{font-family:'Poppins',sans-serif;background:#0b0b0b;color:#fff;margin:0;ove
   transform:translateY(-50%);
   color:#fff;
   z-index:2;
-  font-size: 30px;
-  font-family:Poppins,sans-serif;
+  font-size: 50px;
+}
+.ms-content p{
+  font-size:18px;
+  margin-bottom:10px;
 }
 
+.ms-content h1{
+  font-size:65px;
+  font-weight:700;
+  line-height:1.2;
+}
 /* arrows */
 .ms-arrow{
   position:absolute;
@@ -212,8 +222,10 @@ body{font-family:'Poppins',sans-serif;background:#0b0b0b;color:#fff;margin:0;ove
 }
 
 .btn-yellow:hover{
-  background:#b8962e;
-  color:#000;
+  background:transparent;
+  color:#D4AF37 !important;
+  border:2px solid #D4AF37;
+  border-radius:6px;
 }
 
 /* OUTLINE BUTTON */
@@ -224,6 +236,7 @@ body{font-family:'Poppins',sans-serif;background:#0b0b0b;color:#fff;margin:0;ove
   border-radius:6px;
   background:transparent;
   transition:0.3s;
+  font-weight:600;
 }
 
 .btn-outline:hover{
@@ -589,8 +602,9 @@ h1 {
 .testimonial i{
   margin-right: 10px;
 }
-.testimonial h2{margin-bottom:50px}
-
+.testimonial h2{margin-bottom:50px;
+  color:#d4af37;
+}
 /* SLIDER */
 .testimonial.slider{
   overflow:hidden;
@@ -624,8 +638,8 @@ h1 {
 
 /* AVATAR IMAGE */
 .testimonial-card img{
-  width:70px;
-  height:70px;
+  width:100px;
+  height:100px;
   border-radius:50%;
   margin-bottom:15px;
   background:#fff;
@@ -633,7 +647,7 @@ h1 {
 }
 
 /* TEXT */
-.testimonial-card p{font-size:16px}
+.testimonial-card p{font-size:18px}
 .stars{color:#ffd60a;margin:10px 0}
 .testimonial-card span{font-size:12px;color:#aaa}
 
@@ -747,74 +761,100 @@ h1 {
   .float-card,.plane,.trail,.pin{display:none}
 }
 
-.features2{
-  padding:80px 5%;
-  text-align:center;
-  background:#0b0b0b; /* same dark theme */
-  color:#fff;
+.features2 {
+  background: #0a0a0a;
+  padding: 80px 20px;
+  text-align: center;
+  color: #fff;
 }
 
-/* HEADING */
-.features2 h2{
-  font-size:38px;
-  font-weight:400;
-  margin-bottom:50px;
+.features2 h2 {
+  font-size: 38px;
+  margin-bottom: 50px;
 }
 
-.features2 h2 span{
-  color:#D4AF37; /* neon blue like slider */
+.features2 h2 span {
+  color: #d4af37;
 }
 
 /* GRID */
-.feature-row{
-  display:flex;
-  gap:20px;
-  justify-content:space-between;
-  flex-wrap:wrap;
+.feature-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 /* CARD */
-.feature-box{
-  flex:1;
-  min-width:220px;
-  padding:30px 20px;
-  border-radius:15px;
-  background:rgba(255,255,255,0.08);
-  backdrop-filter:blur(10px);
-  transition:0.4s;
+.feature-box {
+  position: relative;
+  width: 300px;
+  height: 380px;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: 0.4s;
 }
 
-/* ICON */
-.feature-box img{
-  width:80px;
-  margin-bottom:15px;
+/* img FULL COVER */
+.feature-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* TITLE */
-.feature-box h3{
-  margin-bottom:10px;
-  color:#fff;
+/* DARK OVERLAY */
+.feature-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+.feature-box .content{
+  position: absolute;
+  bottom: 20px;
+  left: 15px;
+  right: 15px;
+  z-index: 2
+  text-align:left;
+}
+/* TEXT ON VIDEO */
+.feature-box p {
+  font-size: 13px;
+  color: #ddd;
+}
+.feature-box h3 {
+  margin-bottom: 6px;
+  color: #d4af37;
+  font-size: 20px;
+  font-weight: 600;
 }
 
-/* TEXT */
-.feature-box p{
-  font-size:14px;
-  color:#D4AF37;
+.feature-box p {
+  bottom: 20px;
+  font-size: 13px;
+  color: #0b0b0b;
 }
 
-/* HOVER EFFECT 🔥 */
-.feature-box:hover{
-  transform:translateY(-10px) scale(1.05);
-  box-shadow:0 0 20px rgba(0,229,255,0.5);
+/* HOVER EFFECT */
+.feature-box:hover {
+  transform: translateY(-10px);
+  border: 1px solid #d4af37;
+  box-shadow: 0 10px 25px rgba(212,175,55,0.3);
+}
+
+/* ZOOM VIDEO ON HOVER 🔥 */
+.feature-box:hover img {
+  transform: scale(1.1);
+  transition: 0.5s;
 }
 
 /* RESPONSIVE */
-@media(max-width:768px){
-  .feature-row{
-    flex-direction:column;
+@media (max-width: 768px) {
+  .feature-row {
+    flex-direction: column;
+    align-items: center;
   }
 }
-
 *{box-sizing:border-box;}
 
   .login-section-bg{
@@ -1178,7 +1218,7 @@ h1 {
 
 /* LEFT */
 .find-content{
-  max-width:550px;
+  max-width:700px;
 }
 
 .find h1{
@@ -1340,14 +1380,14 @@ border-radius: 50%;
 <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
 <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
 <li class="nav-item"><a class="nav-link" href="activites.html">Activites</a></li>
-<li class="nav-item"><a class="nav-link" href="Membership.html">Membership</a></li>
+<li class="nav-item"><a class="nav-link" href="membership.html">Membership</a></li>
 <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Hotels</a>
 <ul class="dropdown-menu">
 <li><a class="dropdown-item" href="domestic.html">Domestic</a></li>
 <li><a class="dropdown-item" href="international.html">International</a></li>
 </ul>
 </li>
-<li class="nav-item"><a class="nav-link" href="Blogs.html">Blog</a></li>
+<li class="nav-item"><a class="nav-link" href="blogs.html">Blog</a></li>
 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
 <li class="nav-item"><button class="btn-nav">Login</button></li>
 </ul>
@@ -1425,9 +1465,9 @@ border-radius: 50%;
   </div>
 </section>
 
-<section class="bg-section" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e')">
+<section class="bg-section" style="background-image:url('22.jpg')">
   <div class="bg-content">
-    Explore the World with Us ✈️
+    Your Dream Destinations, Reserved for Life. ✈️
   </div>
 </section>
 
@@ -1442,6 +1482,13 @@ border-radius: 50%;
 </div>
 </section>
 <!-- WHY US -->
+
+<section class="bg-section" style="background-image:url('18.jpg')">
+  <div class="bg-content">
+    Let’s Plan Your Next Escape. 🌍
+  </div>
+</section>
+
 
 <section class="why-choose">
   <div class="cont">
@@ -1482,7 +1529,6 @@ border-radius: 50%;
 
   </div>
 </section>
-
 
 <section class="destination-section">
   <h4><i class="fas fa-plane-departure"></i>BEAUTIFUL PLACES AWAIT</h4>
@@ -1623,7 +1669,7 @@ border-radius: 50%;
     <!-- TEXT -->
     <div class="hero-text">
       <h3>✈ BEAUTIFUL PLACES AWAIT</h3>
-      <h1>Great Journeys<br>Fascinating Places</h1>
+      <h1>Your Dream Destinations<br> Reserved for Life</h1>
       <p>
         Travel isn’t always pretty. It isn’t always comfortable. Sometimes it hurts, it even breaks your heart. But that’s okay. The journey changes you; it should change you. It leaves marks on your memory, on your consciousness, on your heart, and on your body. You take something with you. Hopefully, you leave something good behind.
       </p>
@@ -1660,32 +1706,34 @@ border-radius: 50%;
 
     <div class="feature-box">
       <img src="be.jpg">
+      <div class="content">
       <h3>Beach View</h3>
       <p>Life takes you down many paths, but the best ones lead to the beach.</p>
     </div>
-
+    </div>
     <div class="feature-box">
       <img src="hos.jpg">
+      <div class="content">
       <h3>Hospitality</h3>
       <p>The right blend of autonomy so you're always connected.</p>
     </div>
-
+    </div>
     <div class="feature-box">
-      <img src="flight.jpg">
+      <img src="Flight.jpg">
+      <div class="content">
       <h3>Flight</h3>
       <p>Seamless booking and smooth travel experience.</p>
     </div>
-
+    </div>
     <div class="feature-box">
       <img src="hea.jpg">
+      <div class="content">
       <h3>Healthy Food</h3>
       <p>Enjoy hygienic and delicious meals everywhere.</p>
     </div>
-
+    </div>
   </div>
-
 </section>
-
 <!-- LOGIN SECTION WITH BACKGROUND -->
 <section class="login-section-bg">
 

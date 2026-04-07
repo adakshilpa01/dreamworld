@@ -138,7 +138,7 @@ body{font-family:'Poppins',sans-serif;background:#0b0b0b;color:#fff;margin:0;ove
   background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
   url('https://images.unsplash.com/photo-1501785888041-af3ef285b470');
   background-size:cover;
-  height:300px;
+  height:500px;
   text-align:center;
   padding-top:100px;
 }
@@ -170,11 +170,16 @@ body{font-family:'Poppins',sans-serif;background:#0b0b0b;color:#fff;margin:0;ove
   background:#d4af37;
   padding:25px;
   border-radius:12px;
-  width:360px;
+  width:400px;
   transition:0.3s;
   border:1px solid #222;
 }
-
+.box h3{
+  color: #1a1a1a;
+}
+.box p{
+  color: #1a1a1a;
+}
 .box:hover{
   transform:translateY(-10px);
   border-color:#FFD700;
@@ -274,78 +279,72 @@ body{font-family:'Poppins',sans-serif;background:#0b0b0b;color:#fff;margin:0;ove
   font-size:20px;
 }
 
-.con{
-  margin:0;
-  font-family: Arial, sans-serif;
-  background:#1a1a1a;
-  color:white;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
+.cont-section {
+  background: #1a1a1a;
+  padding: 80px 20px;
+  text-align: center;
 }
 
-/* CONTACT CARD */
-.contact-card{
-  margin-top:60px;
-  max-width:400px;
-  width:90%;
-  background:linear-gradient(145deg,#000,#1a1a1a);
-  padding:30px;
-  border-radius:15px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+.cont-header h2 {
+  color: #d4af37;
+  font-size: 36px;
+  margin-bottom: 10px;
 }
 
-.contact-card h2{
-  color:#d4af37;
-  margin-bottom:10px;
+.cont-header p {
+  color: #ccc;
+  max-width: 600px;
+  margin: auto;
+  margin-bottom: 50px;
 }
 
-.desc{
-  color:#ccc;
-  font-size:14px;
-  margin-bottom:25px;
+.cont-cards {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.info-box{
-  display:flex;
-  gap:15px;
-  margin-bottom:20px;
-  align-items:flex-start;
+.cont-card {
+  background: #111;
+  border-radius: 15px;
+  padding: 30px;
+  width: 380px;
+  transition: 0.3s;
+  border: 1px solid #222;
 }
 
-.icon{
-  color:#000;
-  padding:10px;
-  border-radius:50%;
-  font-size:18px;
+.cont-card h3 {
+  color: #d4af37;
+  margin-bottom: 15px;
 }
 
-.info-box h4{
-  margin:0;
-  color:#d4af37;
+.cont-card p {
+  color: #bbb;
+  font-size: 14px;
+  margin-bottom: 10px;
 }
 
-.info-box p{
-  margin:5px 0;
-  color:#fff;
-  font-size:14px;
+.cont-card a {
+  color: #d4af37;
+  text-decoration: none;
+  font-size: 14px;
 }
 
-.link{
-  color:#d4af37;
-  text-decoration:none;
-  font-weight:bold;
+.cont-card strong {
+  color: white;
+  font-size: 16px;
 }
 
-.link:hover{
-  text-decoration:underline;
+.cont-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+  border-color: #d4af37;
 }
-
 /* MAP */
 .map{
-  width:90%;
-  max-width:800px;
+  width:100%;
+  max-width:100%;
   margin:40px auto;
   border-radius:15px;
   overflow:hidden;
@@ -461,7 +460,7 @@ border-radius: 50%;
 <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
 <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
 <li class="nav-item"><a class="nav-link" href="activites.html">Activites</a></li>
-<li class="nav-item"><a class="nav-link" href="Membership.html">Membership</a></li>
+<li class="nav-item"><a class="nav-link" href="membership.html">Membership</a></li>
 <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Hotels</a>
 <ul class="dropdown-menu">
 <li><a class="dropdown-item" href="domestic.html">Domestic</a></li>
@@ -538,48 +537,41 @@ border-radius: 50%;
 
   </div>
 </section>
+<section class="cont-section">
 
-<section class="con">
-<div class="contact-card">
-  <h2>Contact Information</h2>
-  <p class="desc">
-    It would be great to hear from you! If you got any questions, please do not hesitate to contact us.
-  </p>
-
-  <div class="info-box">
-    <div class="icon">📍</div>
-    <div>
-      <h4>Address</h4>
-      <p>
-        252H T/F, Near Subhiksha,<br>
-        Sant Nagar East of Kailash,<br>
-        South Delhi 110048
-      </p>
-      <a href="https://maps.google.com/?q=East+of+Kailash+Delhi" target="_blank" class="link">
-        View on Map
-      </a>
-    </div>
+  <div class="cont-header">
+    <h2>Contact Information</h2>
+    <p>We would love to hear from you. Feel free to reach out anytime.</p>
   </div>
 
-  <div class="info-box">
-    <div class="icon">📞</div>
-    <div>
-      <h4>Phone</h4>
-      <p>Monday-Saturday<br>11:00 AM - 6:00 PM (Sunday Off)</p>
-      <a href="tel:18003097123" class="link">1800 309 7123</a>
+  <div class="cont-cards">
+
+    <!-- Address Card -->
+    <div class="cont-card">
+      <h3>📍 Address</h3>
+      <p>252H T/F Near Subhiksha,<br>
+      Sant Nagar East of Kailash,<br>
+      South Delhi 110048</p>
+      <a href="#">View on Map</a>
     </div>
+
+    <!-- Phone Card -->
+    <div class="cont-card">
+      <h3>📞 Phone</h3>
+      <p>Monday - Saturday<br>
+      11:00 AM - 6:00 PM<br>
+      (Sunday Off)</p>
+      <strong>1800 309 7123</strong>
+    </div>
+
+    <!-- Email Card -->
+    <div class="cont-card">
+      <h3>✉️ Email</h3>
+      <p>info@dreamworldvacations.net</p>
+    </div>
+
   </div>
 
-  <div class="info-box">
-    <div class="icon">✉️</div>
-    <div>
-      <h4>Email</h4>
-      <a href="mailto:info@dreamworldvacations.net" class="link">
-        info@dreamworldvacations.net
-      </a>
-    </div>
-  </div>
-</div>
 </section>
 <!-- MAP -->
 <div class="map">
