@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Travel Agency Home</title>
+<title>Dreamworld Vacations</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -20,6 +20,7 @@ body{font-family:'Poppins',sans-serif;background:#0b0b0b;color:#fff;margin:0;ove
   font-size: 14px;
   padding: 8px 0;
   border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  scroll-behavior: smooth;
 }
 
 .top-header .container {
@@ -68,7 +69,7 @@ body{font-family:'Poppins',sans-serif;background:#0b0b0b;color:#fff;margin:0;ove
 .navbar-brand{font-weight:bold;font-size:24px;color:#d4af37 !important}
 .nav-link{color:#fff !important;margin:0 10px}
 .nav-link:hover{color:#D4AF37 !important}
-.btn-nav{background:#D4AF37;color:#0b0b0b;border:none;padding:8px 18px;border-radius:6px}
+.btn-nav{background:#D4AF37;color:#0b0b0b;border:none;padding:8px 18px;border-radius:6px;font-weight:700;}
 .dropdown:hover .dropdown-menu {display: block;}
 .logo
 {
@@ -167,12 +168,15 @@ body{font-family:'Poppins',sans-serif;background:#0b0b0b;color:#fff;margin:0;ove
 .ms-content p{
   font-size:18px;
   margin-bottom:10px;
+  font-family:'italic',sans-serif; 
+
 }
 
 .ms-content h1{
   font-size:65px;
   font-weight:700;
   line-height:1.2;
+  font-family:'Poppins',sans-serif;
 }
 /* arrows */
 .ms-arrow{
@@ -548,7 +552,7 @@ h1 {
   right: 0;
   color: #fff;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 28px;
   text-align: center;
 }
 
@@ -776,78 +780,84 @@ h1 {
 .features2 h2 span {
   color: #d4af37;
 }
+/* SECTION */
+.services {
+  padding: 60px 5%;
+  background: #0d0d0d;
+}
 
 /* GRID */
-.feature-row {
-  display: flex;
-  justify-content: center;
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
-  flex-wrap: wrap;
 }
 
 /* CARD */
-.feature-box {
-  position: relative;
-  width: 300px;
-  height: 380px;
+.cards {
+  background: #111;
   border-radius: 15px;
+  text-align: center;
+  padding: 15px;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  transition: 0.4s ease;
+  position: relative;
   overflow: hidden;
-  transition: 0.4s;
 }
 
-/* img FULL COVER */
-.feature-box img {
+.cards:hover {
+  transform: translateY(-10px);
+  border-color: #d4af37;
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+}
+
+/* IMAGE */
+.cards img {
   width: 100%;
-  height: 100%;
+  height: 200px;
+  border-radius: 12px;
   object-fit: cover;
 }
 
-/* DARK OVERLAY */
-.feature-box::after {
+/* TEXT */
+.cards h3 {
+  margin: 15px 0 5px;
+  color: #d4af37;
+  font-size: 30px;
+}
+
+.cards p {
+  color: #aaa;
+}
+
+/* GOLD LINE EFFECT */
+.cards::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-}
-.feature-box .content{
-  position: absolute;
-  bottom: 20px;
-  left: 15px;
-  right: 15px;
-  z-index: 2
-  text-align:left;
-}
-/* TEXT ON VIDEO */
-.feature-box p {
-  font-size: 13px;
-  color: #ddd;
-}
-.feature-box h3 {
-  margin-bottom: 6px;
-  color: #d4af37;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.feature-box p {
-  bottom: 20px;
-  font-size: 13px;
-  color: #0b0b0b;
-}
-
-/* HOVER EFFECT */
-.feature-box:hover {
-  transform: translateY(-10px);
-  border: 1px solid #d4af37;
-  box-shadow: 0 10px 25px rgba(212,175,55,0.3);
-}
-
-/* ZOOM VIDEO ON HOVER 🔥 */
-.feature-box:hover img {
-  transform: scale(1.1);
+  width: 100%;
+  height: 2px;
+  background: #d4af37;
+  top: 0;
+  left: -100%;
   transition: 0.5s;
 }
 
+.cards:hover::before {
+  left: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+}
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .feature-row {
@@ -923,7 +933,7 @@ h1 {
   .btn-login{
     width:100%;
     padding:12px;
-    background:#ffd60a;
+    background: #D4AF37;
     border:none;
     border-radius:8px;
     cursor:pointer;
@@ -931,7 +941,7 @@ h1 {
   }
 
   .btn-login:hover{
-    background:#ff2e88;
+    background:#1a1a1a;
     color:#fff;
   }
 
@@ -1024,7 +1034,7 @@ h1 {
 
 .partner img {
     width: 100px;
-    filter: grayscale(100%);
+    filter: grayscale(10%);
     opacity: 0.7;
     transition: 0.3s;
 }
@@ -1322,8 +1332,10 @@ h1 {
 }
 /* Footer */
 footer{background:#0b0b0b;padding:50px 0}
-.footer-links a{display:block;color:#fff;text-decoration:none;margin-bottom:8px}
-.footer-links a:hover{color:#ffd60a}
+.footer-links h6{text-decoration: underline; color: #d4af37}
+.footer-links a{position: relative;padding-left: 18px;color: #ccc;text-decoration: none;display: block;}
+.footer-links a::before{content: "●";color: #d4af37;position: absolute;left: 0;}
+.footer-links a:hover{color:#d4af37}
 .social i{font-size:20px;margin-right:10px;color:#ff2e88}
 .copy{border-top:1px solid #222;margin-top:20px;padding-top:15px;text-align:center}
 
@@ -1351,10 +1363,10 @@ border-radius: 50%;
     <!-- LEFT -->
     <div class="top-left">
       <span>
-        <i class="fas fa-phone-alt"></i> +91 9876543210
+        <i class="fas fa-phone-alt"></i> 1800 309 7123
       </span>
       <span>
-        <i class="fas fa-envelope"></i> support@yourwebsite.com
+        <i class="fas fa-envelope"></i> info@dreamworldvacations.net
       </span>
     </div>
 
@@ -1378,7 +1390,7 @@ border-radius: 50%;
 <ul class="navbar-nav ms-auto align-items-center">
 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
 <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-<li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+<li class="nav-item"><a class="nav-link" href="service">Services</a></li>
 <li class="nav-item"><a class="nav-link" href="activites.html">Activites</a></li>
 <li class="nav-item"><a class="nav-link" href="membership.html">Membership</a></li>
 <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Hotels</a>
@@ -1389,7 +1401,7 @@ border-radius: 50%;
 </li>
 <li class="nav-item"><a class="nav-link" href="blogs.html">Blog</a></li>
 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-<li class="nav-item"><button class="btn-nav">Login</button></li>
+<li class="nav-item"><a href="#login-section" class="btn-nav">Login<a></li>
 </ul>
 </div>
 </div>
@@ -1701,47 +1713,44 @@ border-radius: 50%;
     Choose us to Travel like a Boss at<br>
     <span>Dreamworld Vacations</span>
   </h2>
+  <section class="services">
+  <div class="cards-container">
 
-  <div class="feature-row">
-
-    <div class="feature-box">
+    <div class="cards">
       <img src="be.jpg">
-      <div class="content">
       <h3>Beach View</h3>
       <p>Life takes you down many paths, but the best ones lead to the beach.</p>
     </div>
-    </div>
-    <div class="feature-box">
+
+    <div class="cards">
       <img src="hos.jpg">
-      <div class="content">
       <h3>Hospitality</h3>
       <p>The right blend of autonomy so you're always connected.</p>
     </div>
-    </div>
-    <div class="feature-box">
+
+    <div class="cards">
       <img src="Flight.jpg">
-      <div class="content">
       <h3>Flight</h3>
       <p>Seamless booking and smooth travel experience.</p>
     </div>
-    </div>
-    <div class="feature-box">
+
+    <div class="cards">
       <img src="hea.jpg">
-      <div class="content">
       <h3>Healthy Food</h3>
       <p>Enjoy hygienic and delicious meals everywhere.</p>
     </div>
-    </div>
+
   </div>
 </section>
+</section>
 <!-- LOGIN SECTION WITH BACKGROUND -->
-<section class="login-section-bg">
+<section id="login-section" class="login-section-bg">
 
   <div class="login-overlay"></div>
 
   <div class="login-box">
     <h2>Sign In</h2>
-
+    <form id="loginForm">
     <div class="input-box">
       <i class="fa fa-user"></i>
       <input type="text" id="username" placeholder="Username">
@@ -1755,7 +1764,7 @@ border-radius: 50%;
 
     <p id="error"></p>
 
-    <button class="btn-login" onclick="validateLogin()">Login</button>
+    <button type="submit" class="btn-login">Login</button>
 
   </div>
  </section>
@@ -1774,18 +1783,16 @@ border-radius: 50%;
             <div class="partners-track">
 
                 <!-- logos -->
-                <div class="partner"><img src="images/partner1.png"></div>
-                <div class="partner"><img src="images/partner2.png"></div>
-                <div class="partner"><img src="images/partner3.png"></div>
-                <div class="partner"><img src="images/partner4.png"></div>
-                <div class="partner"><img src="images/partner5.png"></div>
+                <div class="partner"><img src="WhatsApp Image 2026-04-20 at 10.40.56 PM.jpeg"></div>
+                <div class="partner"><img src="WhatsApp Image 2026-04-20 at 10.40.10 PM.jpeg"></div>
+                <div class="partner"><img src="WhatsApp Image 2026-04-20 at 10.39.50 PM.jpeg"></div>
+                <div class="partner"><img src="WhatsApp Image 2026-04-20 at 10.40.34 PM.jpeg"></div>
 
                 <!-- duplicate for infinite scroll -->
-                <div class="partner"><img src="images/partner1.png"></div>
-                <div class="partner"><img src="images/partner2.png"></div>
-                <div class="partner"><img src="images/partner3.png"></div>
-                <div class="partner"><img src="images/partner4.png"></div>
-                <div class="partner"><img src="images/partner5.png"></div>
+                <div class="partner"><img src="WhatsApp Image 2026-04-20 at 10.40.56 PM.jpeg"></div>
+                <div class="partner"><img src="WhatsApp Image 2026-04-20 at 10.40.10 PM.jpeg"></div>
+                <div class="partner"><img src="WhatsApp Image 2026-04-20 at 10.39.50 PM.jpeg"></div>
+                <div class="partner"><img src="WhatsApp Image 2026-04-20 at 10.40.34 PM.jpeg"></div>
 
             </div>
         </div>
@@ -1945,25 +1952,27 @@ border-radius: 50%;
 
 <div class="col-md-2 footer-links">
 <h6>Quick Links</h6>
-<a href="#">Home</a>
-<a href="#">About</a>
-<a href="#">Services</a>
-<a href="#">Contact</a>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="hotels.html">Hotels</a>
+<a href="contact.html">Contact</a>
+<a href="https://razorpay.me/@dreamworldvacationsindiapriva">Paynow (Razorpay)</a>
+<a href="https://payments.cashfree.com/forms/dreamworldvacations">Paynow (Cashfree)</a>
 </div>
 
 <div class="col-md-3 footer-links">
-<h6>Services</h6>
-<a href="#">Flights</a>
-<a href="#">Hotels</a>
-<a href="#">Tours</a>
-<a href="#">Transport</a>
+<h6>Support</h6>
+<a href="terms.html">Terms of Use</a>
+<a href="privacy.html">Privacy Policy</a>
+<a href="refund.html">Refund Policy</a>
+<a href="contact.html">Contact</a>
 </div>
 
 <div class="col-md-3">
 <h6>Contact</h6>
-<p>Email: info@travel.com</p>
-<p>Phone: +91 9876543210</p>
-<p>Location: India</p>
+<p>Email: info@dreamworldvacations.net</p>
+<p>Phone: 011 4508 7133</p>
+<p><a href="https://www.bing.com/maps/search?FORM=HDRSC6&style=r&q=252H+T%2FF%2C+Near+Subhiksha%2C+Sant+Nagar+East+of+kailash%2C+South+Delhi+110048&cp=28.558255%7E77.249408&lvl=16"></a>Location: India</p>
 </div>
 
 </div>
@@ -2082,51 +2091,38 @@ document.querySelector(".testimonials").addEventListener("mouseleave", () => {
 updateT();
 </script>
 <!----sign in----->
+
 <script>
-  const password = document.getElementById("password");
-  const toggle = document.getElementById("togglePassword");
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+  e.preventDefault();
 
-  if(toggle){
-    toggle.addEventListener("click", () => {
-      if(password.type === "password"){
-        password.type = "text";
-        toggle.classList.replace("fa-eye","fa-eye-slash");
-      } else {
-        password.type = "password";
-        toggle.classList.replace("fa-eye-slash","fa-eye");
-      }
-    });
-  }
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
 
-  function validateLogin(){
-    const user = document.getElementById("username").value.trim();
-    const pass = password.value.trim();
-    const error = document.getElementById("error");
+  fetch("https://dwvbackend.com/member_login/index.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    body: new URLSearchParams({
+      Username: username,
+      Password: password
+    })
+  })
+  .then(res => res.text())
+  .then(data => {
+    console.log(data);
 
-    error.style.color = "red";
-
-    if(user === "" || pass === ""){
-      error.innerText = "Please fill all fields";
-      return;
+    if (data && data.length > 0) {
+      document.getElementById("error").innerText = "Login Successful ✅";
+      window.location.href = "dashboard.html";
+    } else {
+      document.getElementById("error").innerText = "Invalid Login ❌";
     }
-
-    if(user.length < 3){
-      error.innerText = "Username must be at least 3 characters";
-      return;
-    }
-
-    if(pass.length < 5){
-      error.innerText = "Password must be at least 5 characters";
-      return;
-    }
-
-    error.style.color = "lightgreen";
-    error.innerText = "Login Successful ✅";
-  }
-  </script>
-
-</section>
-
+  })
+  .catch(err => console.log(err));
+});
+</script>
 <script>
 const dot = document.querySelector('.cursor-dot');
 
